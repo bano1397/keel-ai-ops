@@ -1,0 +1,11 @@
+.venv
+**/__pycache__
+**/node_modules
+frontend/.next
+.env
+.env.*
+!.env.example
+evals/reports
+finetune/data
+models
+.git
