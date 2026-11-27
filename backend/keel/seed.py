@@ -27,7 +27,7 @@ def seed(force: bool = False) -> bool:
             [
                 User(
                     email=s.admin_email,
-                    name="Ammad (Admin)",
+                    name="Shehar Bano",
                     password_hash=hash_password(s.admin_password),
                     role="admin",
                 ),

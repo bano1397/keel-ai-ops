@@ -1,26 +1,152 @@
-# Demo video script — "Keel: the AI operations desk" (3:30)
+# Keel — demo video script (3 min 45 s)
 
-Format: 1920×1080, screen captures of the real product (no mock data), voice-over, subtle music. Captures come from the live deployment. Optional polish: assemble with the `video-shotcraft` / Remotion skill from the same captures.
+**Format:** 1920×1080 screen recording (Cmd + Shift + 5 → Record Entire Screen), voice-over, soft background music at low volume.
+**Style:** calm, confident, product-launch pace. Short sentences. Pause half a second after each scene.
+**Before recording:**
+- Close every Chrome tab except two:
+  - **Tab A:** https://keel-ai-ops-x92d.vercel.app/chat
+  - **Tab B:** https://keel-ai-ops-x92d.vercel.app/login
+- Zoom 110 % (Cmd +). Turn on Do Not Disturb.
+- Do one full practice run. Practice messages also warm up the server, so the real take is fast.
+- Every message below uses a fresh order, so each one works once. If you need a second take of the refund scenes, ask Claude for fresh order numbers.
 
-| # | Time | Shot (what's on screen) | Voice-over |
-|---|---|---|---|
-| 1 | 0:00–0:15 | Black → product logo "Keel". Cut to a busy inbox of a UK shop: emails, Telegram pings, chat bubbles stacking up. | "A UK online shop gets hundreds of messages a day. Where's my order. Can I get a refund. And sometimes — I'm calling my solicitor." |
-| 2 | 0:15–0:30 | Architecture diagram animates left→right: channels → queue → router → three agents → dashboard. | "Keel is one AI system that runs customer operations on its own: it answers, it acts, it learns from corrections, and it reports to management." |
-| 3 | 0:30–0:55 | Public chat widget: "Do you deliver to Jersey?" — tokens stream, source chips appear `[Delivery & Shipping Policy §…]`. Then "Who is your CEO?" → honest "I don't know". | "Policy questions go to the Support agent. It searches 24 documents — PDFs, our crawled help centre and a 168-product catalogue — with hybrid keyword and vector search and a reranker. Every answer is cited. And when the answer isn't in the documents, it says so." |
-| 4 | 0:55–1:25 | Telegram on a phone: "Refund HF-xxxxxx, it arrived broken" (≤£50) → instant refund. Then a £600 refund on web chat → "pending approval". Cut to dashboard Approvals → Approve → customer gets the message. | "Order questions go to the Orders agent, which calls real database tools. Refunds up to fifty pounds go straight through; anything bigger waits for a human. Every write is ownership-checked and idempotent, so a retry can never refund twice." |
-| 5 | 1:25–1:45 | Email client: angry email with "chargeback". Slack channel lights up with the escalation summary. Dashboard Escalations shows the ticket. | "Angry or high-risk customers — legal threats, chargebacks, safety issues — go straight to a human, with a summary so nobody repeats themselves, and a Slack alert." |
-| 6 | 1:45–2:05 | Conversation detail → Agent trace timeline: router label + confidence + model, tool calls with arguments and results, sources with rerank scores, tokens, cost, latency. | "Every reply has a full trace: which agent, which tools, why, and what it cost." |
-| 7 | 2:05–2:30 | Reviewer edits a reply → Feedback page shows it → "Propose rules" → activate v2 → same-style question now answered correctly. Eval chart ticks up (before/after numbers from the write-up). | "When a human edits or rejects a reply, Keel learns: similar corrections become examples, rejections become prompt rules an admin approves, and everything exports as a training set." |
-| 8 | 2:30–2:50 | Fine-tune results table: base vs fine-tuned vs gpt-oss-120b (accuracy, macro-F1, latency, cost per 1,000). | "The Router is a Qwen 1.5-billion fine-tuned on support intents. It's [X] points more accurate than the base model, runs on a CPU, and costs [Y] per thousand messages, against [Z] for a 120-billion API model." |
-| 9 | 2:50–3:10 | Terminal: `make eval` → 100 cases scrolling → score + per-category table. Analytics page: auto-resolution, response time, cost per conversation. Daily report email in inbox. | "One command runs a hundred test cases. Analytics track auto-resolution, response time and cost, and management gets a report every morning." |
-| 10 | 3:10–3:30 | Logo + "Live demo · GitHub · built in one day on free tiers" + name "Shehar Bano". | "Keel. Built by Shehar Bano for Cadral AI." |
+**Every number in this script is real:** it comes from the repo (`evals/reports/`, `finetune/results_colab.json`). Don't round them up.
 
-Numbers in brackets are filled from `finetune/RESULTS.md` and `evals/reports/` after the real runs — never estimated.
+---
 
-## Capture checklist
-- [ ] Reset demo DB (`make seed` on a fresh DB) so ids are clean
-- [ ] Browser at 1440×900, light theme, zoom 110%
-- [ ] Telegram desktop/phone mirror with the bot
-- [ ] Slack channel open
-- [ ] Email client with the report
-- [ ] Terminal with large font for `make eval`
+## SCENE 1 — The hook (0:00 – 0:15)
+
+**SHOW:** Tab B, the Keel login page, still. Slowly move the mouse to the Keel logo.
+
+**SAY:**
+> "A UK online shop gets hundreds of messages every day. *Where's my order?* *Can I get a refund?* And sometimes — *I'm calling my solicitor.*
+> This is **Keel**: one AI system that runs customer operations on its own."
+
+---
+
+## SCENE 2 — How it works (0:15 – 0:35)
+
+**SHOW:** The GitHub README on github.com/bano1397/keel-ai-ops, scrolled to the **Architecture** diagram. Move the cursor slowly from left to right along it.
+
+**SAY:**
+> "Every incoming message is stored first and retried if anything fails, so nothing is ever lost.
+> A **Router** reads it and picks a specialist: a **Support** agent for questions, an **Orders** agent that takes real actions, and an **Escalation** agent for anyone angry or at risk.
+> All three share the conversation and the customer's full history."
+
+---
+
+## SCENE 3 — Answers with proof (0:35 – 1:05)
+
+**SHOW:** Tab A (chat). Email: `ella.davies@example.co.uk` → **Start chatting**.
+1. Type: **Do you deliver to Jersey?** → Enter. Let the answer stream. Hover over the **source chips** under the answer.
+2. Type: **How long do refunds take after I return something?** → Enter.
+
+**SAY (while it streams):**
+> "The Support agent searches twenty-four company documents — PDF policies, a crawled help-centre website and a catalogue of 168 products.
+> It combines keyword search with vector search, re-ranks the results, and **every sentence is checked against its source** before the customer sees it. Every answer is cited."
+
+3. Type: **Who is your CEO?** → Enter.
+
+**SAY:**
+> "And when the answer isn't in the documents, it doesn't make anything up. It says *I don't know* — and offers a human."
+
+---
+
+## SCENE 4 — Real actions, real database (1:05 – 1:40)
+
+**SHOW:** Same chat.
+1. Type: **Where is my order HF-249641?** → Enter. Click **"How I answered"** to show the tool call.
+
+**SAY:**
+> "Order questions go to the Orders agent, which calls **real functions on the database** — not text pretending to be an action."
+
+2. Change the email (top of the widget) to `olivia.thompson@example.co.uk`. Type: **I'd like a refund for order HF-214306, I changed my mind.** → Enter.
+
+**SAY:**
+> "Refunds up to fifty pounds go straight through…"
+
+3. Type: **Please refund order HF-299317 in full, it's the wrong colour.** → Enter.
+
+**SAY:**
+> "…anything bigger waits for a person. Safety lives in code, not in the prompt: it checks the customer owns the order, enforces the limit, and uses an idempotency key, so a retry can **never refund twice**."
+
+---
+
+## SCENE 5 — Angry customers go to a human (1:40 – 1:55)
+
+**SHOW:** Same chat, still as olivia. Type: **This is a scam, I'm filing a chargeback with my bank!** → Enter.
+
+**SAY:**
+> "Legal threats, chargebacks, safety issues, vulnerable customers — they skip the AI entirely and go straight to a human, with a written summary so nobody has to repeat themselves."
+
+---
+
+## SCENE 6 — The control room (1:55 – 2:40)
+
+**SHOW:** Tab B. Click the **Admin** line under *Demo credentials* (it fills the form) → **Sign in**.
+1. **Inbox:** click the newest conversation (Olivia). Expand the **agent trace** on one reply. Point at:
+   - the router decision and confidence;
+   - the tool call with its arguments and result;
+   - the sources with scores;
+   - tokens, cost and latency.
+
+**SAY:**
+> "This is the dashboard. Every reply comes with a full trace: which agent answered, which tools it called and **why**, which sources it used, and exactly what it cost."
+
+2. Click **Approvals** → **Refunds** tab → **Approve** the £ refund for HF-299317.
+
+**SAY:**
+> "The large refund is waiting here. One click, and it's issued — and the customer is told."
+
+3. Click **Escalations** and show Olivia's ticket and its summary.
+
+**SAY:**
+> "The chargeback is already a ticket, with the issue, what was tried and the next step."
+
+---
+
+## SCENE 7 — It learns from people (2:40 – 3:00)
+
+**SHOW:**
+1. Back in **Inbox**, open Ella's conversation. On a reply, click **Edit**, change a few words (for example add *"Our team is happy to help."*), then **Save**.
+2. Click **Feedback**: show the edit in the list and the **Prompt versions** panel.
+
+**SAY:**
+> "When a human edits or rejects a reply, Keel saves it as feedback and uses it three ways: similar past corrections become examples, rejection reasons become new prompt rules an admin approves, and everything exports as a training set."
+
+---
+
+## SCENE 8 — Proof in numbers (3:00 – 3:30)
+
+**SHOW:**
+1. **Analytics** page: KPI cards and charts (2 seconds).
+2. GitHub README → scroll to the **results** section (eval table and fine-tune table).
+
+**SAY:**
+> "Analytics track auto-resolution, response time, cost per conversation and accuracy over time.
+> One command runs **a hundred test cases** — the live system scores **ninety-six per cent**, with one hundred per cent on routing, tool calls, safety, citations and escalation.
+> I also **fine-tuned a 1.5-billion-parameter model** as the router: accuracy went from **sixty-seven to ninety-six point six per cent**, and it caught **every** high-risk message — trained in five minutes on a free GPU.
+> All of it costs about **thirteen cents per thousand messages**."
+
+---
+
+## SCENE 9 — Close (3:30 – 3:45)
+
+**SHOW:** Back to the Keel chat page (Tab A), still.
+
+**SAY:**
+> "Multi-agent, grounded, safe, and learning — running live on free tiers.
+> **Keel.** Built by **Shehar Bano** for Cadral AI."
+
+Fade out.
+
+---
+
+## Editing checklist (iMovie, free)
+- Cut any waiting while answers load; keep the streaming text itself.
+- Total length between **3:30 and 4:00**.
+- Add a title card at 0:00 (*Keel — the AI operations desk*) and an end card with:
+  - the live link: keel-ai-ops-x92d.vercel.app
+  - the GitHub link: github.com/bano1397/keel-ai-ops
+- Music at about 10–15 % volume under the voice.
+- Export 1080p and upload to YouTube as **Unlisted** (or Loom / Google Drive with link sharing on).
