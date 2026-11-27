@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     groq_api_key: str = ""
     groq_model: str = "openai/gpt-oss-120b"
     groq_fast_model: str = "openai/gpt-oss-20b"
+    groq_backup_model: str = "qwen/qwen3.8-27b"
     gemini_api_key: str = ""
     gemini_model: str = "gemini-3.8-flash"
     ollama_url: str = ""

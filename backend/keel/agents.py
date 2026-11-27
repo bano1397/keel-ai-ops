@@ -132,7 +132,8 @@ def support_node(state: State) -> State:
         tool="hybrid_search",
         args={"query": q},
         result=ans.retrieval,
-        reason="Keyword (Postgres FTS) + vector (pgvector) search, fused with RRF, " "reranked by a cross-encoder",
+        reason="Keyword (Postgres FTS) + vector (pgvector) search, fused with RRF, reranked by "
+        + ("an LLM" if settings().rerank_provider == "llm" else "a cross-encoder"),
     )
     if ans.dropped:
         step(
@@ -191,7 +192,12 @@ def orders_node(state: State) -> State:
             state["usage"] = _usage_dict(u)
             return state
         except llm.LLMUnavailable as e:
-            step(state, type="fallback", agent="orders", reason=f"LLM unavailable ({e}); deterministic rules used")
+            step(
+                state,
+                type="fallback",
+                agent="orders",
+                reason=f"All LLM providers unavailable ({e}); deterministic rules used",
+            )
     put(state, _orders_rules(state, ctx, allowed))
     return state
 

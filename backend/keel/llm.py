@@ -15,6 +15,7 @@ PRICES_PER_MTOK = {
     "openai/gpt-oss-120b": (0.15, 0.60),
     "openai/gpt-oss-20b": (0.075, 0.30),
     "gemini-3.8-flash": (0.75, 3.75),
+    "qwen/qwen3.8-27b": (0.80, 4.00),
     "keel-router-qwen2.5-1.5b": (0.0, 0.0),
     "offline-rules": (0.0, 0.0),
 }
@@ -70,6 +71,16 @@ def providers() -> list[Provider]:
             out.append(
                 Provider(
                     "groq-fast", "https://api.groq.com/openai/v1", s.groq_api_key, s.groq_fast_model, s.groq_fast_model
+                )
+            )
+        if s.groq_backup_model:
+            out.append(
+                Provider(
+                    "groq-backup",
+                    "https://api.groq.com/openai/v1",
+                    s.groq_api_key,
+                    s.groq_backup_model,
+                    s.groq_backup_model,
                 )
             )
     if s.gemini_api_key:
@@ -146,11 +157,14 @@ def chat(
         if p.name.startswith("groq") and "gpt-oss" in model:
             body["reasoning_effort"] = "low"
             body["max_tokens"] = max_tokens + 600
+        elif p.name.startswith("groq") and "qwen3" in model:
+            body["reasoning_effort"] = "none"
         try:
             data = _post(p, body)
         except Exception as e:
             log.warning("provider %s (%s) failed: %r", p.name, model, e)
-            errors.append(f"{p.name}: {e!r}")
+            reason = "daily quota reached" if isinstance(e, QuotaExceeded) else type(e).__name__
+            errors.append(f"{model}: {reason}")
             continue
         u = data.get("usage") or {}
         usage.add(model, int(u.get("prompt_tokens", 0)), int(u.get("completion_tokens", 0)))
