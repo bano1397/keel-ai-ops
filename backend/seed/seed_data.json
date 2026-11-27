@@ -1,0 +1,3531 @@
+{
+  "reference_date": "2026-11-27",
+  "customers": [
+    {
+      "id": 1,
+      "name": "Olivia Thompson",
+      "email": "olivia.thompson@example.co.uk",
+      "telegram_chat_id": "700100200",
+      "phone": "+44 7700 900100",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "29 Oak Close, Leeds, LS6 2AB",
+      "created_at": "2025-05-21T12:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Amelia Turner",
+      "email": "amelia.turner@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900101",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "76 Victoria Road, York, YO10 3DD",
+      "created_at": "2026-04-04T12:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Isla Smith",
+      "email": "isla.smith@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900102",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "77 The Green, Manchester, M20 4RT",
+      "created_at": "2025-05-01T12:00:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Ava Thomas",
+      "email": "ava.thomas@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900103",
+      "tier": "vip",
+      "vulnerable": false,
+      "address": "93 Victoria Road, Bristol, BS6 7QP",
+      "created_at": "2026-01-09T12:00:00Z"
+    },
+    {
+      "id": 5,
+      "name": "Freya Campbell",
+      "email": "freya.campbell@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900104",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "17 Church Street, Edinburgh, EH9 1LT",
+      "created_at": "2025-08-25T12:00:00Z"
+    },
+    {
+      "id": 6,
+      "name": "Lily Roberts",
+      "email": "lily.roberts@example.co.uk",
+      "telegram_chat_id": "700100385",
+      "phone": "+44 7700 900105",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "7 Church Street, Cardiff, CF24 4HQ",
+      "created_at": "2025-12-18T12:00:00Z"
+    },
+    {
+      "id": 7,
+      "name": "Grace Cooper",
+      "email": "grace.cooper@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900106",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "30 Church Street, Belfast, BT9 5EP",
+      "created_at": "2025-12-16T12:00:00Z"
+    },
+    {
+      "id": 8,
+      "name": "Sophie Wright",
+      "email": "sophie.wright@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900107",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "89 Victoria Road, Norwich, NR2 3PL",
+      "created_at": "2026-08-09T12:00:00Z"
+    },
+    {
+      "id": 9,
+      "name": "Emily Wood",
+      "email": "emily.wood@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900108",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "97 Church Street, Brighton, BN1 6HT",
+      "created_at": "2025-09-24T12:00:00Z"
+    },
+    {
+      "id": 10,
+      "name": "Poppy Baker",
+      "email": "poppy.baker@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900109",
+      "tier": "standard",
+      "vulnerable": true,
+      "address": "75 Mill Lane, Sheffield, S11 8TY",
+      "created_at": "2024-11-06T12:00:00Z"
+    },
+    {
+      "id": 11,
+      "name": "Ella Davies",
+      "email": "ella.davies@example.co.uk",
+      "telegram_chat_id": "700100570",
+      "phone": "+44 7700 900110",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "83 Station Road, Inverness, IV2 4JB",
+      "created_at": "2026-03-27T12:00:00Z"
+    },
+    {
+      "id": 12,
+      "name": "Evie Wilson",
+      "email": "evie.wilson@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900111",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "40 High Street, Douglas, IM2 3LN",
+      "created_at": "2026-01-18T12:00:00Z"
+    },
+    {
+      "id": 13,
+      "name": "Charlotte Hughes",
+      "email": "charlotte.hughes@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900112",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "74 Mill Lane, Nottingham, NG7 1AA",
+      "created_at": "2026-02-20T12:00:00Z"
+    },
+    {
+      "id": 14,
+      "name": "Harriet Moore",
+      "email": "harriet.moore@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900113",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "68 Church Street, Exeter, EX4 6PX",
+      "created_at": "2025-08-22T12:00:00Z"
+    },
+    {
+      "id": 15,
+      "name": "Niamh Evans",
+      "email": "niamh.evans@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900114",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "5 Oak Close, Harrogate, HG1 2RE",
+      "created_at": "2024-09-14T12:00:00Z"
+    },
+    {
+      "id": 16,
+      "name": "Priya Brown",
+      "email": "priya.brown@example.co.uk",
+      "telegram_chat_id": "700100755",
+      "phone": "+44 7700 900115",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "39 Mill Lane, Leeds, LS6 2AB",
+      "created_at": "2026-07-17T12:00:00Z"
+    },
+    {
+      "id": 17,
+      "name": "Aisha Harris",
+      "email": "aisha.harris@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900116",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "37 Church Street, York, YO10 3DD",
+      "created_at": "2025-12-15T12:00:00Z"
+    },
+    {
+      "id": 18,
+      "name": "Zara Edwards",
+      "email": "zara.edwards@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900117",
+      "tier": "vip",
+      "vulnerable": false,
+      "address": "6 Station Road, Manchester, M20 4RT",
+      "created_at": "2024-08-09T12:00:00Z"
+    },
+    {
+      "id": 19,
+      "name": "Megan Patel",
+      "email": "megan.patel@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900118",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "65 Mill Lane, Bristol, BS6 7QP",
+      "created_at": "2024-11-09T12:00:00Z"
+    },
+    {
+      "id": 20,
+      "name": "Chloe Bennett",
+      "email": "chloe.bennett@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900119",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "59 Park Avenue, Edinburgh, EH9 1LT",
+      "created_at": "2025-09-18T12:00:00Z"
+    },
+    {
+      "id": 21,
+      "name": "Oliver Morgan",
+      "email": "oliver.morgan@example.co.uk",
+      "telegram_chat_id": "700100940",
+      "phone": "+44 7700 900120",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "38 The Green, Cardiff, CF24 4HQ",
+      "created_at": "2024-06-28T12:00:00Z"
+    },
+    {
+      "id": 22,
+      "name": "George King",
+      "email": "george.king@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900121",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "50 Station Road, Belfast, BT9 5EP",
+      "created_at": "2025-10-12T12:00:00Z"
+    },
+    {
+      "id": 23,
+      "name": "Harry Taylor",
+      "email": "harry.taylor@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900122",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "77 High Street, Norwich, NR2 3PL",
+      "created_at": "2026-07-07T12:00:00Z"
+    },
+    {
+      "id": 24,
+      "name": "Jack Price",
+      "email": "jack.price@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900123",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "13 Mill Lane, Brighton, BN1 6HT",
+      "created_at": "2026-07-11T12:00:00Z"
+    },
+    {
+      "id": 25,
+      "name": "Noah Ward",
+      "email": "noah.ward@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900124",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "89 Mill Lane, Sheffield, S11 8TY",
+      "created_at": "2024-07-28T12:00:00Z"
+    },
+    {
+      "id": 26,
+      "name": "Charlie Hall",
+      "email": "charlie.hall@example.co.uk",
+      "telegram_chat_id": "700101125",
+      "phone": "+44 7700 900125",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "84 Oak Close, Inverness, IV2 4JB",
+      "created_at": "2025-05-28T12:00:00Z"
+    },
+    {
+      "id": 27,
+      "name": "Thomas Jackson",
+      "email": "thomas.jackson@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900126",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "7 The Green, Douglas, IM2 3LN",
+      "created_at": "2024-11-05T12:00:00Z"
+    },
+    {
+      "id": 28,
+      "name": "James Green",
+      "email": "james.green@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900127",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "12 Church Street, Nottingham, NG7 1AA",
+      "created_at": "2026-07-26T12:00:00Z"
+    },
+    {
+      "id": 29,
+      "name": "William Lewis",
+      "email": "william.lewis@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900128",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "84 Park Avenue, Exeter, EX4 6PX",
+      "created_at": "2026-05-13T12:00:00Z"
+    },
+    {
+      "id": 30,
+      "name": "Alfie Kelly",
+      "email": "alfie.kelly@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900129",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "77 Church Street, Harrogate, HG1 2RE",
+      "created_at": "2026-03-03T12:00:00Z"
+    },
+    {
+      "id": 31,
+      "name": "Rhys Clarke",
+      "email": "rhys.clarke@example.co.uk",
+      "telegram_chat_id": "700101310",
+      "phone": "+44 7700 900130",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "14 The Green, Leeds, LS6 2AB",
+      "created_at": "2025-02-25T12:00:00Z"
+    },
+    {
+      "id": 32,
+      "name": "Callum Walker",
+      "email": "callum.walker@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900131",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "92 Victoria Road, York, YO10 3DD",
+      "created_at": "2025-08-14T12:00:00Z"
+    },
+    {
+      "id": 33,
+      "name": "Hamish Shah",
+      "email": "hamish.shah@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900132",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "38 High Street, Manchester, M20 4RT",
+      "created_at": "2026-07-28T12:00:00Z"
+    },
+    {
+      "id": 34,
+      "name": "Owen Jones",
+      "email": "owen.jones@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900133",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "49 Church Street, Bristol, BS6 7QP",
+      "created_at": "2025-05-04T12:00:00Z"
+    },
+    {
+      "id": 35,
+      "name": "Arjun Murray",
+      "email": "arjun.murray@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900134",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "19 Oak Close, Edinburgh, EH9 1LT",
+      "created_at": "2025-07-07T12:00:00Z"
+    },
+    {
+      "id": 36,
+      "name": "Mohammed Williams",
+      "email": "mohammed.williams@example.co.uk",
+      "telegram_chat_id": "700101495",
+      "phone": "+44 7700 900135",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "11 Mill Lane, Cardiff, CF24 4HQ",
+      "created_at": "2025-07-22T12:00:00Z"
+    },
+    {
+      "id": 37,
+      "name": "Daniel Robinson",
+      "email": "daniel.robinson@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900136",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "80 Mill Lane, Belfast, BT9 5EP",
+      "created_at": "2024-07-04T12:00:00Z"
+    },
+    {
+      "id": 38,
+      "name": "Ethan Morris",
+      "email": "ethan.morris@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900137",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "39 High Street, Norwich, NR2 3PL",
+      "created_at": "2024-08-18T12:00:00Z"
+    },
+    {
+      "id": 39,
+      "name": "Samuel Khan",
+      "email": "samuel.khan@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900138",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "22 Victoria Road, Brighton, BN1 6HT",
+      "created_at": "2025-10-18T12:00:00Z"
+    },
+    {
+      "id": 40,
+      "name": "Joseph Hill",
+      "email": "joseph.hill@example.co.uk",
+      "telegram_chat_id": null,
+      "phone": "+44 7700 900139",
+      "tier": "standard",
+      "vulnerable": false,
+      "address": "80 Park Avenue, Sheffield, S11 8TY",
+      "created_at": "2026-08-10T12:00:00Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "HF-281648",
+      "customer_id": 30,
+      "customer_email": "alfie.kelly@example.co.uk",
+      "status": "cancelled",
+      "total_gbp": 126.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0001",
+          "name": "Washed Linen Duvet Cover Set, Double, White",
+          "qty": 1,
+          "unit_price_gbp": 78.99
+        },
+        {
+          "sku": "HF-SKU-0127",
+          "name": "Ribbed Glass Vase, Sand",
+          "qty": 2,
+          "unit_price_gbp": 23.99
+        }
+      ],
+      "shipping_address": "77 Church Street, Harrogate, HG1 2RE",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-09-29T15:53:32Z",
+      "delivered_at": null,
+      "updated_at": "2026-09-30T18:53:32Z"
+    },
+    {
+      "id": "HF-210283",
+      "customer_id": 40,
+      "customer_email": "joseph.hill@example.co.uk",
+      "status": "partially_refunded",
+      "total_gbp": 132.94,
+      "items": [
+        {
+          "sku": "HF-SKU-0076",
+          "name": "Linen Tea Towel Pair, Cream",
+          "qty": 1,
+          "unit_price_gbp": 13.95
+        },
+        {
+          "sku": "HF-SKU-0045",
+          "name": "Arc Floor Lamp, Opal",
+          "qty": 1,
+          "unit_price_gbp": 118.99
+        }
+      ],
+      "shipping_address": "80 Park Avenue, Sheffield, S11 8TY",
+      "carrier": "DPD",
+      "tracking": "DP6046550598GB",
+      "created_at": "2026-09-30T04:07:31Z",
+      "delivered_at": "2026-10-02T07:27:28Z",
+      "updated_at": "2026-10-02T07:27:28Z"
+    },
+    {
+      "id": "HF-267696",
+      "customer_id": 26,
+      "customer_email": "charlie.hall@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 297.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0110",
+          "name": "Berber Style Wool Rug, 120 x 170cm, Terracotta",
+          "qty": 2,
+          "unit_price_gbp": 148.99
+        }
+      ],
+      "shipping_address": "84 Oak Close, Inverness, IV2 4JB",
+      "carrier": "Evri",
+      "tracking": "EV2570002492GB",
+      "created_at": "2026-10-02T12:50:21Z",
+      "delivered_at": "2026-10-06T06:15:09Z",
+      "updated_at": "2026-10-06T06:15:09Z"
+    },
+    {
+      "id": "HF-221273",
+      "customer_id": 11,
+      "customer_email": "ella.davies@example.co.uk",
+      "status": "refunded",
+      "total_gbp": 32.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0090",
+          "name": "Bath Sheet, Blush",
+          "qty": 1,
+          "unit_price_gbp": 32.99
+        }
+      ],
+      "shipping_address": "83 Station Road, Inverness, IV2 4JB",
+      "carrier": "DPD",
+      "tracking": "DP7916783226GB",
+      "created_at": "2026-10-05T04:59:14Z",
+      "delivered_at": "2026-10-09T03:10:49Z",
+      "updated_at": "2026-10-09T03:10:49Z"
+    },
+    {
+      "id": "HF-238847",
+      "customer_id": 20,
+      "customer_email": "chloe.bennett@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 31.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0016",
+          "name": "Seersucker Duvet Cover Set, Single, White",
+          "qty": 1,
+          "unit_price_gbp": 31.99
+        }
+      ],
+      "shipping_address": "59 Park Avenue, Edinburgh, EH9 1LT",
+      "carrier": "Evri",
+      "tracking": "EV7089635364GB",
+      "created_at": "2026-10-05T19:21:43Z",
+      "delivered_at": "2026-10-07T10:08:32Z",
+      "updated_at": "2026-10-07T10:08:32Z"
+    },
+    {
+      "id": "HF-240282",
+      "customer_id": 34,
+      "customer_email": "owen.jones@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 177.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0092",
+          "name": "Ribbed Bath Mat, Grey",
+          "qty": 2,
+          "unit_price_gbp": 21.99
+        },
+        {
+          "sku": "HF-SKU-0106",
+          "name": "Jute Rug, 160 x 230cm, Natural",
+          "qty": 1,
+          "unit_price_gbp": 133.99
+        }
+      ],
+      "shipping_address": "49 Church Street, Bristol, BS6 7QP",
+      "carrier": "Evri",
+      "tracking": "EV2405693428GB",
+      "created_at": "2026-10-06T14:42:52Z",
+      "delivered_at": "2026-10-09T01:06:24Z",
+      "updated_at": "2026-10-09T01:06:24Z"
+    },
+    {
+      "id": "HF-274284",
+      "customer_id": 38,
+      "customer_email": "ethan.morris@example.co.uk",
+      "status": "cancelled",
+      "total_gbp": 1097.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0040",
+          "name": "Hebden Sideboard, Natural Oak",
+          "qty": 2,
+          "unit_price_gbp": 548.99
+        }
+      ],
+      "shipping_address": "39 High Street, Norwich, NR2 3PL",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-10-07T17:33:52Z",
+      "delivered_at": null,
+      "updated_at": "2026-10-08T17:33:52Z"
+    },
+    {
+      "id": "HF-251420",
+      "customer_id": 35,
+      "customer_email": "arjun.murray@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 356.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0167",
+          "name": "Bamboo Cooling Mattress Topper, Double",
+          "qty": 2,
+          "unit_price_gbp": 88.99
+        },
+        {
+          "sku": "HF-SKU-0158",
+          "name": "Rolled Foam Mattress, Double",
+          "qty": 1,
+          "unit_price_gbp": 178.99
+        }
+      ],
+      "shipping_address": "19 Oak Close, Edinburgh, EH9 1LT",
+      "carrier": "Evri",
+      "tracking": "EV8820682134GB",
+      "created_at": "2026-10-07T22:33:29Z",
+      "delivered_at": "2026-10-10T16:43:32Z",
+      "updated_at": "2026-10-10T16:43:32Z"
+    },
+    {
+      "id": "HF-270992",
+      "customer_id": 34,
+      "customer_email": "owen.jones@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 22.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0085",
+          "name": "Turkish Cotton Bath Towel, White",
+          "qty": 1,
+          "unit_price_gbp": 22.99
+        }
+      ],
+      "shipping_address": "49 Church Street, Bristol, BS6 7QP",
+      "carrier": "DPD",
+      "tracking": "DP6151804550GB",
+      "created_at": "2026-10-08T07:47:33Z",
+      "delivered_at": "2026-10-10T00:47:34Z",
+      "updated_at": "2026-10-10T00:47:34Z"
+    },
+    {
+      "id": "HF-249351",
+      "customer_id": 1,
+      "customer_email": "olivia.thompson@example.co.uk",
+      "status": "cancelled",
+      "total_gbp": 74.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0092",
+          "name": "Ribbed Bath Mat, Grey",
+          "qty": 2,
+          "unit_price_gbp": 21.99
+        },
+        {
+          "sku": "HF-SKU-0100",
+          "name": "Bamboo Bath Caddy, White",
+          "qty": 1,
+          "unit_price_gbp": 30.99
+        }
+      ],
+      "shipping_address": "29 Oak Close, Leeds, LS6 2AB",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-10-09T12:14:15Z",
+      "delivered_at": null,
+      "updated_at": "2026-10-09T15:14:15Z"
+    },
+    {
+      "id": "HF-260483",
+      "customer_id": 15,
+      "customer_email": "niamh.evans@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 37.85,
+      "items": [
+        {
+          "sku": "HF-SKU-0094",
+          "name": "Ceramic Soap Dispenser, White",
+          "qty": 2,
+          "unit_price_gbp": 13.95
+        },
+        {
+          "sku": "HF-SKU-0104",
+          "name": "Hand Towel, Grey",
+          "qty": 1,
+          "unit_price_gbp": 9.95
+        }
+      ],
+      "shipping_address": "5 Oak Close, Harrogate, HG1 2RE",
+      "carrier": "DPD",
+      "tracking": "DP2886356777GB",
+      "created_at": "2026-10-09T23:50:14Z",
+      "delivered_at": "2026-10-13T04:43:05Z",
+      "updated_at": "2026-10-13T04:43:05Z"
+    },
+    {
+      "id": "HF-293826",
+      "customer_id": 9,
+      "customer_email": "emily.wood@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 20.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0012",
+          "name": "Brushed Cotton Pillowcase Pair, Charcoal",
+          "qty": 1,
+          "unit_price_gbp": 20.99
+        }
+      ],
+      "shipping_address": "97 Church Street, Brighton, BN1 6HT",
+      "carrier": "Evri",
+      "tracking": "EV4591821067GB",
+      "created_at": "2026-10-11T14:20:59Z",
+      "delivered_at": "2026-10-15T05:09:18Z",
+      "updated_at": "2026-10-15T05:09:18Z"
+    },
+    {
+      "id": "HF-234979",
+      "customer_id": 33,
+      "customer_email": "hamish.shah@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 129.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0047",
+          "name": "Mushroom Table Lamp, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 50.99
+        },
+        {
+          "sku": "HF-SKU-0057",
+          "name": "Rechargeable LED Lantern, Opal",
+          "qty": 1,
+          "unit_price_gbp": 34.99
+        },
+        {
+          "sku": "HF-SKU-0123",
+          "name": "Doormat, Navy",
+          "qty": 2,
+          "unit_price_gbp": 21.99
+        }
+      ],
+      "shipping_address": "38 High Street, Manchester, M20 4RT",
+      "carrier": "Evri",
+      "tracking": "EV1816250532GB",
+      "created_at": "2026-10-13T02:45:14Z",
+      "delivered_at": "2026-10-16T12:12:07Z",
+      "updated_at": "2026-10-16T12:12:07Z"
+    },
+    {
+      "id": "HF-241407",
+      "customer_id": 38,
+      "customer_email": "ethan.morris@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 202.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0108",
+          "name": "Jute Rug, 160 x 230cm, Navy",
+          "qty": 1,
+          "unit_price_gbp": 128.99
+        },
+        {
+          "sku": "HF-SKU-0018",
+          "name": "Seersucker Duvet Cover Set, Single, Charcoal",
+          "qty": 2,
+          "unit_price_gbp": 36.99
+        }
+      ],
+      "shipping_address": "39 High Street, Norwich, NR2 3PL",
+      "carrier": "Evri",
+      "tracking": "EV5619325895GB",
+      "created_at": "2026-10-14T23:52:33Z",
+      "delivered_at": "2026-10-17T10:54:14Z",
+      "updated_at": "2026-10-17T10:54:14Z"
+    },
+    {
+      "id": "HF-286151",
+      "customer_id": 34,
+      "customer_email": "owen.jones@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 9.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0104",
+          "name": "Hand Towel, Grey",
+          "qty": 1,
+          "unit_price_gbp": 9.95
+        }
+      ],
+      "shipping_address": "49 Church Street, Bristol, BS6 7QP",
+      "carrier": "DPD",
+      "tracking": "DP6165036582GB",
+      "created_at": "2026-10-15T20:03:49Z",
+      "delivered_at": "2026-10-19T17:38:41Z",
+      "updated_at": "2026-10-19T17:38:41Z"
+    },
+    {
+      "id": "HF-229344",
+      "customer_id": 32,
+      "customer_email": "callum.walker@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 49.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0015",
+          "name": "Waffle Knit Throw, Charcoal",
+          "qty": 1,
+          "unit_price_gbp": 49.99
+        }
+      ],
+      "shipping_address": "92 Victoria Road, York, YO10 3DD",
+      "carrier": "DPD",
+      "tracking": "DP6610772035GB",
+      "created_at": "2026-10-16T04:59:35Z",
+      "delivered_at": "2026-10-20T12:51:03Z",
+      "updated_at": "2026-10-20T12:51:03Z"
+    },
+    {
+      "id": "HF-236003",
+      "customer_id": 33,
+      "customer_email": "hamish.shah@example.co.uk",
+      "status": "cancelled",
+      "total_gbp": 114.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0113",
+          "name": "Washable Runner, 70 x 200cm, Terracotta",
+          "qty": 1,
+          "unit_price_gbp": 60.99
+        },
+        {
+          "sku": "HF-SKU-0051",
+          "name": "Pleated Lampshade, 30cm, Opal",
+          "qty": 1,
+          "unit_price_gbp": 23.99
+        },
+        {
+          "sku": "HF-SKU-0082",
+          "name": "Copper Utensil Set, Cream",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "38 High Street, Manchester, M20 4RT",
+      "carrier": "Royal Mail",
+      "tracking": null,
+      "created_at": "2026-10-16T15:12:49Z",
+      "delivered_at": null,
+      "updated_at": "2026-10-17T21:12:49Z"
+    },
+    {
+      "id": "HF-282158",
+      "customer_id": 10,
+      "customer_email": "poppy.baker@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 26.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0073",
+          "name": "Oak Chopping Board, Cream",
+          "qty": 1,
+          "unit_price_gbp": 26.99
+        }
+      ],
+      "shipping_address": "75 Mill Lane, Sheffield, S11 8TY",
+      "carrier": "DPD",
+      "tracking": "DP4213026824GB",
+      "created_at": "2026-10-18T10:45:20Z",
+      "delivered_at": "2026-10-20T08:46:44Z",
+      "updated_at": "2026-10-20T08:46:44Z"
+    },
+    {
+      "id": "HF-295851",
+      "customer_id": 28,
+      "customer_email": "james.green@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 110.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0165",
+          "name": "Waterproof Mattress Protector, King",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        },
+        {
+          "sku": "HF-SKU-0048",
+          "name": "Mushroom Table Lamp, Opal",
+          "qty": 1,
+          "unit_price_gbp": 50.99
+        },
+        {
+          "sku": "HF-SKU-0143",
+          "name": "Woven Storage Basket, Moss",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "12 Church Street, Nottingham, NG7 1AA",
+      "carrier": "Royal Mail",
+      "tracking": "RO4868285613GB",
+      "created_at": "2026-10-19T22:56:19Z",
+      "delivered_at": "2026-10-24T21:40:15Z",
+      "updated_at": "2026-10-24T21:40:15Z"
+    },
+    {
+      "id": "HF-277177",
+      "customer_id": 28,
+      "customer_email": "james.green@example.co.uk",
+      "status": "refunded",
+      "total_gbp": 19.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0121",
+          "name": "Doormat, Natural",
+          "qty": 1,
+          "unit_price_gbp": 19.99
+        }
+      ],
+      "shipping_address": "12 Church Street, Nottingham, NG7 1AA",
+      "carrier": "Evri",
+      "tracking": "EV7757366330GB",
+      "created_at": "2026-10-21T04:50:33Z",
+      "delivered_at": "2026-10-25T04:56:12Z",
+      "updated_at": "2026-10-25T04:56:12Z"
+    },
+    {
+      "id": "HF-242298",
+      "customer_id": 34,
+      "customer_email": "owen.jones@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 137.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0052",
+          "name": "Ceiling Pendant Light, Brass",
+          "qty": 2,
+          "unit_price_gbp": 68.99
+        }
+      ],
+      "shipping_address": "49 Church Street, Bristol, BS6 7QP",
+      "carrier": "DPD",
+      "tracking": "DP9182855413GB",
+      "created_at": "2026-10-21T15:08:46Z",
+      "delivered_at": "2026-10-25T02:23:30Z",
+      "updated_at": "2026-10-25T02:23:30Z"
+    },
+    {
+      "id": "HF-212870",
+      "customer_id": 40,
+      "customer_email": "joseph.hill@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 137.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0162",
+          "name": "Memory Foam Mattress Topper, King",
+          "qty": 1,
+          "unit_price_gbp": 82.99
+        },
+        {
+          "sku": "HF-SKU-0056",
+          "name": "Rechargeable LED Lantern, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 34.99
+        },
+        {
+          "sku": "HF-SKU-0121",
+          "name": "Doormat, Natural",
+          "qty": 1,
+          "unit_price_gbp": 19.99
+        }
+      ],
+      "shipping_address": "80 Park Avenue, Sheffield, S11 8TY",
+      "carrier": "Royal Mail",
+      "tracking": "RO8109297993GB",
+      "created_at": "2026-10-22T13:24:39Z",
+      "delivered_at": "2026-10-27T09:06:57Z",
+      "updated_at": "2026-10-27T09:06:57Z"
+    },
+    {
+      "id": "HF-283755",
+      "customer_id": 30,
+      "customer_email": "alfie.kelly@example.co.uk",
+      "status": "cancelled",
+      "total_gbp": 29.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0165",
+          "name": "Waterproof Mattress Protector, King",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "77 Church Street, Harrogate, HG1 2RE",
+      "carrier": "Royal Mail",
+      "tracking": null,
+      "created_at": "2026-10-24T13:04:29Z",
+      "delivered_at": null,
+      "updated_at": "2026-10-25T09:04:29Z"
+    },
+    {
+      "id": "HF-237157",
+      "customer_id": 16,
+      "customer_email": "priya.brown@example.co.uk",
+      "status": "refunded",
+      "total_gbp": 531.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0020",
+          "name": "Hungarian Goose Down Pillow, Sage",
+          "qty": 1,
+          "unit_price_gbp": 54.99
+        },
+        {
+          "sku": "HF-SKU-0151",
+          "name": "Hybrid Memory Foam Mattress, Single",
+          "qty": 1,
+          "unit_price_gbp": 298.99
+        },
+        {
+          "sku": "HF-SKU-0006",
+          "name": "Washed Linen Duvet Cover Set, King, Charcoal",
+          "qty": 2,
+          "unit_price_gbp": 88.99
+        }
+      ],
+      "shipping_address": "39 Mill Lane, Leeds, LS6 2AB",
+      "carrier": "Royal Mail",
+      "tracking": "RO2340181561GB",
+      "created_at": "2026-10-27T12:20:20Z",
+      "delivered_at": "2026-10-31T18:16:00Z",
+      "updated_at": "2026-10-31T18:16:00Z"
+    },
+    {
+      "id": "HF-262513",
+      "customer_id": 34,
+      "customer_email": "owen.jones@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 25.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0050",
+          "name": "Pleated Lampshade, 30cm, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 25.99
+        }
+      ],
+      "shipping_address": "49 Church Street, Bristol, BS6 7QP",
+      "carrier": "DPD",
+      "tracking": "DP3340266019GB",
+      "created_at": "2026-10-28T11:58:46Z",
+      "delivered_at": "2026-10-30T05:51:26Z",
+      "updated_at": "2026-10-30T05:51:26Z"
+    },
+    {
+      "id": "HF-299317",
+      "customer_id": 1,
+      "customer_email": "olivia.thompson@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 613.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0064",
+          "name": "Stoneware Dinner Set, 12 Piece, Cream",
+          "qty": 1,
+          "unit_price_gbp": 64.99
+        },
+        {
+          "sku": "HF-SKU-0042",
+          "name": "Hebden Sideboard, Black",
+          "qty": 1,
+          "unit_price_gbp": 548.99
+        }
+      ],
+      "shipping_address": "29 Oak Close, Leeds, LS6 2AB",
+      "carrier": "DPD",
+      "tracking": "DP4653088453GB",
+      "created_at": "2026-10-30T08:44:25Z",
+      "delivered_at": "2026-11-04T05:09:59Z",
+      "updated_at": "2026-11-04T05:09:59Z"
+    },
+    {
+      "id": "HF-283951",
+      "customer_id": 2,
+      "customer_email": "amelia.turner@example.co.uk",
+      "status": "partially_refunded",
+      "total_gbp": 34.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0055",
+          "name": "Rechargeable LED Lantern, Brass",
+          "qty": 1,
+          "unit_price_gbp": 34.99
+        }
+      ],
+      "shipping_address": "76 Victoria Road, York, YO10 3DD",
+      "carrier": "Royal Mail",
+      "tracking": "RO7631263894GB",
+      "created_at": "2026-10-30T15:52:03Z",
+      "delivered_at": "2026-11-02T01:41:51Z",
+      "updated_at": "2026-11-02T01:41:51Z"
+    },
+    {
+      "id": "HF-223660",
+      "customer_id": 37,
+      "customer_email": "daniel.robinson@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 118.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0044",
+          "name": "Arc Floor Lamp, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 118.99
+        }
+      ],
+      "shipping_address": "80 Mill Lane, Belfast, BT9 5EP",
+      "carrier": "DPD",
+      "tracking": "DP5710374827GB",
+      "created_at": "2026-10-31T17:47:19Z",
+      "delivered_at": "2026-11-02T07:03:40Z",
+      "updated_at": "2026-11-02T07:03:40Z"
+    },
+    {
+      "id": "HF-222974",
+      "customer_id": 11,
+      "customer_email": "ella.davies@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 259.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0135",
+          "name": "Round Wall Mirror, 60cm, Ink",
+          "qty": 2,
+          "unit_price_gbp": 80.99
+        },
+        {
+          "sku": "HF-SKU-0007",
+          "name": "Egyptian Cotton Fitted Sheet, Double, White",
+          "qty": 1,
+          "unit_price_gbp": 33.99
+        },
+        {
+          "sku": "HF-SKU-0083",
+          "name": "Copper Utensil Set, Sage",
+          "qty": 2,
+          "unit_price_gbp": 31.99
+        }
+      ],
+      "shipping_address": "83 Station Road, Inverness, IV2 4JB",
+      "carrier": "DPD",
+      "tracking": "DP6137739802GB",
+      "created_at": "2026-11-01T20:43:58Z",
+      "delivered_at": "2026-11-04T13:37:02Z",
+      "updated_at": "2026-11-04T13:37:02Z"
+    },
+    {
+      "id": "HF-227672",
+      "customer_id": 37,
+      "customer_email": "daniel.robinson@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 34.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0055",
+          "name": "Rechargeable LED Lantern, Brass",
+          "qty": 1,
+          "unit_price_gbp": 34.99
+        }
+      ],
+      "shipping_address": "80 Mill Lane, Belfast, BT9 5EP",
+      "carrier": "Evri",
+      "tracking": "EV2048841255GB",
+      "created_at": "2026-11-02T23:43:54Z",
+      "delivered_at": "2026-11-04T15:38:17Z",
+      "updated_at": "2026-11-04T15:38:17Z"
+    },
+    {
+      "id": "HF-214306",
+      "customer_id": 1,
+      "customer_email": "olivia.thompson@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 18.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0163",
+          "name": "Waterproof Mattress Protector, Single",
+          "qty": 1,
+          "unit_price_gbp": 18.95
+        }
+      ],
+      "shipping_address": "29 Oak Close, Leeds, LS6 2AB",
+      "carrier": "DPD",
+      "tracking": "DP6478097681GB",
+      "created_at": "2026-11-05T05:02:48Z",
+      "delivered_at": "2026-11-08T16:05:47Z",
+      "updated_at": "2026-11-08T16:05:47Z"
+    },
+    {
+      "id": "HF-269797",
+      "customer_id": 3,
+      "customer_email": "isla.smith@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 131.93,
+      "items": [
+        {
+          "sku": "HF-SKU-0060",
+          "name": "Swing Arm Wall Light, Opal",
+          "qty": 2,
+          "unit_price_gbp": 60.99
+        },
+        {
+          "sku": "HF-SKU-0104",
+          "name": "Hand Towel, Grey",
+          "qty": 1,
+          "unit_price_gbp": 9.95
+        }
+      ],
+      "shipping_address": "77 The Green, Manchester, M20 4RT",
+      "carrier": "Evri",
+      "tracking": "EV7019163186GB",
+      "created_at": "2026-11-05T21:35:06Z",
+      "delivered_at": "2026-11-10T12:07:53Z",
+      "updated_at": "2026-11-10T12:07:53Z"
+    },
+    {
+      "id": "HF-206821",
+      "customer_id": 21,
+      "customer_email": "oliver.morgan@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 13.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0094",
+          "name": "Ceramic Soap Dispenser, White",
+          "qty": 1,
+          "unit_price_gbp": 13.95
+        }
+      ],
+      "shipping_address": "38 The Green, Cardiff, CF24 4HQ",
+      "carrier": "Royal Mail",
+      "tracking": "RO6262689862GB",
+      "created_at": "2026-11-06T14:18:32Z",
+      "delivered_at": "2026-11-09T14:01:19Z",
+      "updated_at": "2026-11-09T14:01:19Z"
+    },
+    {
+      "id": "HF-245482",
+      "customer_id": 21,
+      "customer_email": "oliver.morgan@example.co.uk",
+      "status": "cancelled",
+      "total_gbp": 334.92,
+      "items": [
+        {
+          "sku": "HF-SKU-0094",
+          "name": "Ceramic Soap Dispenser, White",
+          "qty": 1,
+          "unit_price_gbp": 13.95
+        },
+        {
+          "sku": "HF-SKU-0109",
+          "name": "Berber Style Wool Rug, 120 x 170cm, Natural",
+          "qty": 2,
+          "unit_price_gbp": 148.99
+        },
+        {
+          "sku": "HF-SKU-0131",
+          "name": "Scented Candle, Fig & Cedar, Moss",
+          "qty": 1,
+          "unit_price_gbp": 22.99
+        }
+      ],
+      "shipping_address": "38 The Green, Cardiff, CF24 4HQ",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-06T23:52:02Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-07T11:52:02Z"
+    },
+    {
+      "id": "HF-286134",
+      "customer_id": 11,
+      "customer_email": "ella.davies@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 142.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0136",
+          "name": "Linen Cushion Cover, 45cm, Sand",
+          "qty": 2,
+          "unit_price_gbp": 19.99
+        },
+        {
+          "sku": "HF-SKU-0112",
+          "name": "Washable Runner, 70 x 200cm, Natural",
+          "qty": 1,
+          "unit_price_gbp": 60.99
+        },
+        {
+          "sku": "HF-SKU-0098",
+          "name": "Waffle Bath Robe, Grey",
+          "qty": 1,
+          "unit_price_gbp": 41.99
+        }
+      ],
+      "shipping_address": "83 Station Road, Inverness, IV2 4JB",
+      "carrier": "DPD",
+      "tracking": "DP9389702390GB",
+      "created_at": "2026-11-07T03:52:01Z",
+      "delivered_at": "2026-11-09T03:42:57Z",
+      "updated_at": "2026-11-09T03:42:57Z"
+    },
+    {
+      "id": "HF-296142",
+      "customer_id": 2,
+      "customer_email": "amelia.turner@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 29.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0074",
+          "name": "Oak Chopping Board, Sage",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "76 Victoria Road, York, YO10 3DD",
+      "carrier": "DPD",
+      "tracking": "DP8565392908GB",
+      "created_at": "2026-11-08T05:23:07Z",
+      "delivered_at": "2026-11-10T20:21:43Z",
+      "updated_at": "2026-11-10T20:21:43Z"
+    },
+    {
+      "id": "HF-269592",
+      "customer_id": 20,
+      "customer_email": "chloe.bennett@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 89.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0114",
+          "name": "Washable Runner, 70 x 200cm, Navy",
+          "qty": 1,
+          "unit_price_gbp": 63.99
+        },
+        {
+          "sku": "HF-SKU-0050",
+          "name": "Pleated Lampshade, 30cm, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 25.99
+        }
+      ],
+      "shipping_address": "59 Park Avenue, Edinburgh, EH9 1LT",
+      "carrier": "Royal Mail",
+      "tracking": "RO3770706757GB",
+      "created_at": "2026-11-08T06:28:02Z",
+      "delivered_at": "2026-11-12T13:06:11Z",
+      "updated_at": "2026-11-12T13:06:11Z"
+    },
+    {
+      "id": "HF-265112",
+      "customer_id": 11,
+      "customer_email": "ella.davies@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 98.94,
+      "items": [
+        {
+          "sku": "HF-SKU-0167",
+          "name": "Bamboo Cooling Mattress Topper, Double",
+          "qty": 1,
+          "unit_price_gbp": 88.99
+        },
+        {
+          "sku": "HF-SKU-0103",
+          "name": "Hand Towel, White",
+          "qty": 1,
+          "unit_price_gbp": 9.95
+        }
+      ],
+      "shipping_address": "83 Station Road, Inverness, IV2 4JB",
+      "carrier": "Royal Mail",
+      "tracking": "RO4584152089GB",
+      "created_at": "2026-11-08T09:30:14Z",
+      "delivered_at": "2026-11-11T22:41:31Z",
+      "updated_at": "2026-11-11T22:41:31Z"
+    },
+    {
+      "id": "HF-287103",
+      "customer_id": 15,
+      "customer_email": "niamh.evans@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 922.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0029",
+          "name": "Linton 3 Seater Sofa, Walnut",
+          "qty": 1,
+          "unit_price_gbp": 898.99
+        },
+        {
+          "sku": "HF-SKU-0049",
+          "name": "Pleated Lampshade, 30cm, Brass",
+          "qty": 1,
+          "unit_price_gbp": 23.99
+        }
+      ],
+      "shipping_address": "5 Oak Close, Harrogate, HG1 2RE",
+      "carrier": "DPD",
+      "tracking": "DP5529487766GB",
+      "created_at": "2026-11-08T16:26:10Z",
+      "delivered_at": "2026-11-12T11:27:39Z",
+      "updated_at": "2026-11-12T11:27:39Z"
+    },
+    {
+      "id": "HF-205673",
+      "customer_id": 3,
+      "customer_email": "isla.smith@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 97.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0062",
+          "name": "Glass Globe Desk Lamp, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 49.99
+        },
+        {
+          "sku": "HF-SKU-0049",
+          "name": "Pleated Lampshade, 30cm, Brass",
+          "qty": 2,
+          "unit_price_gbp": 23.99
+        }
+      ],
+      "shipping_address": "77 The Green, Manchester, M20 4RT",
+      "carrier": "Evri",
+      "tracking": "EV1291215789GB",
+      "created_at": "2026-11-09T08:05:53Z",
+      "delivered_at": "2026-11-13T12:14:41Z",
+      "updated_at": "2026-11-13T12:14:41Z"
+    },
+    {
+      "id": "HF-297212",
+      "customer_id": 37,
+      "customer_email": "daniel.robinson@example.co.uk",
+      "status": "refunded",
+      "total_gbp": 164.94,
+      "items": [
+        {
+          "sku": "HF-SKU-0111",
+          "name": "Berber Style Wool Rug, 120 x 170cm, Navy",
+          "qty": 1,
+          "unit_price_gbp": 148.99
+        },
+        {
+          "sku": "HF-SKU-0010",
+          "name": "Brushed Cotton Pillowcase Pair, White",
+          "qty": 1,
+          "unit_price_gbp": 15.95
+        }
+      ],
+      "shipping_address": "80 Mill Lane, Belfast, BT9 5EP",
+      "carrier": "Evri",
+      "tracking": "EV4040734343GB",
+      "created_at": "2026-11-09T19:03:00Z",
+      "delivered_at": "2026-11-13T07:02:45Z",
+      "updated_at": "2026-11-13T07:02:45Z"
+    },
+    {
+      "id": "HF-234949",
+      "customer_id": 17,
+      "customer_email": "aisha.harris@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 69.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0062",
+          "name": "Glass Globe Desk Lamp, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 49.99
+        },
+        {
+          "sku": "HF-SKU-0136",
+          "name": "Linen Cushion Cover, 45cm, Sand",
+          "qty": 1,
+          "unit_price_gbp": 19.99
+        }
+      ],
+      "shipping_address": "37 Church Street, York, YO10 3DD",
+      "carrier": "Royal Mail",
+      "tracking": "RO4658743186GB",
+      "created_at": "2026-11-09T22:25:22Z",
+      "delivered_at": "2026-11-11T11:43:38Z",
+      "updated_at": "2026-11-11T11:43:38Z"
+    },
+    {
+      "id": "HF-290904",
+      "customer_id": 6,
+      "customer_email": "lily.roberts@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 233.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0051",
+          "name": "Pleated Lampshade, 30cm, Opal",
+          "qty": 1,
+          "unit_price_gbp": 23.99
+        },
+        {
+          "sku": "HF-SKU-0112",
+          "name": "Washable Runner, 70 x 200cm, Natural",
+          "qty": 1,
+          "unit_price_gbp": 60.99
+        },
+        {
+          "sku": "HF-SKU-0111",
+          "name": "Berber Style Wool Rug, 120 x 170cm, Navy",
+          "qty": 1,
+          "unit_price_gbp": 148.99
+        }
+      ],
+      "shipping_address": "7 Church Street, Cardiff, CF24 4HQ",
+      "carrier": "DPD",
+      "tracking": "DP7162662374GB",
+      "created_at": "2026-11-10T05:46:25Z",
+      "delivered_at": "2026-11-11T19:09:38Z",
+      "updated_at": "2026-11-11T19:09:38Z"
+    },
+    {
+      "id": "HF-228798",
+      "customer_id": 25,
+      "customer_email": "noah.ward@example.co.uk",
+      "status": "refunded",
+      "total_gbp": 186.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0066",
+          "name": "Stoneware Dinner Set, 12 Piece, Slate",
+          "qty": 1,
+          "unit_price_gbp": 69.99
+        },
+        {
+          "sku": "HF-SKU-0090",
+          "name": "Bath Sheet, Blush",
+          "qty": 1,
+          "unit_price_gbp": 32.99
+        },
+        {
+          "sku": "HF-SKU-0134",
+          "name": "Round Wall Mirror, 60cm, Moss",
+          "qty": 1,
+          "unit_price_gbp": 83.99
+        }
+      ],
+      "shipping_address": "89 Mill Lane, Sheffield, S11 8TY",
+      "carrier": "Evri",
+      "tracking": "EV1128747915GB",
+      "created_at": "2026-11-10T16:31:04Z",
+      "delivered_at": "2026-11-12T16:16:29Z",
+      "updated_at": "2026-11-12T16:16:29Z"
+    },
+    {
+      "id": "HF-290148",
+      "customer_id": 4,
+      "customer_email": "ava.thomas@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 20.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0012",
+          "name": "Brushed Cotton Pillowcase Pair, Charcoal",
+          "qty": 1,
+          "unit_price_gbp": 20.99
+        }
+      ],
+      "shipping_address": "93 Victoria Road, Bristol, BS6 7QP",
+      "carrier": "Evri",
+      "tracking": "EV5056235763GB",
+      "created_at": "2026-11-11T01:15:26Z",
+      "delivered_at": "2026-11-14T01:57:57Z",
+      "updated_at": "2026-11-14T01:57:57Z"
+    },
+    {
+      "id": "HF-222360",
+      "customer_id": 12,
+      "customer_email": "evie.wilson@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 99.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0065",
+          "name": "Stoneware Dinner Set, 12 Piece, Sage",
+          "qty": 1,
+          "unit_price_gbp": 69.99
+        },
+        {
+          "sku": "HF-SKU-0089",
+          "name": "Bath Sheet, Grey",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "40 High Street, Douglas, IM2 3LN",
+      "carrier": "Evri",
+      "tracking": "EV3918297895GB",
+      "created_at": "2026-11-11T21:07:24Z",
+      "delivered_at": "2026-11-13T18:15:52Z",
+      "updated_at": "2026-11-13T18:15:52Z"
+    },
+    {
+      "id": "HF-242442",
+      "customer_id": 5,
+      "customer_email": "freya.campbell@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 255.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0026",
+          "name": "Ashby Bedside Table, Walnut",
+          "qty": 1,
+          "unit_price_gbp": 128.99
+        },
+        {
+          "sku": "HF-SKU-0139",
+          "name": "Framed Botanical Print, Sand",
+          "qty": 2,
+          "unit_price_gbp": 38.99
+        },
+        {
+          "sku": "HF-SKU-0116",
+          "name": "Recycled Cotton Rug, 90 x 150cm, Terracotta",
+          "qty": 1,
+          "unit_price_gbp": 48.99
+        }
+      ],
+      "shipping_address": "17 Church Street, Edinburgh, EH9 1LT",
+      "carrier": "Royal Mail",
+      "tracking": "RO7111536456GB",
+      "created_at": "2026-11-13T06:49:13Z",
+      "delivered_at": "2026-11-17T02:08:20Z",
+      "updated_at": "2026-11-17T02:08:20Z"
+    },
+    {
+      "id": "HF-275736",
+      "customer_id": 19,
+      "customer_email": "megan.patel@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 133.94,
+      "items": [
+        {
+          "sku": "HF-SKU-0118",
+          "name": "Round Wool Rug, 150cm, Natural",
+          "qty": 1,
+          "unit_price_gbp": 118.99
+        },
+        {
+          "sku": "HF-SKU-0137",
+          "name": "Linen Cushion Cover, 45cm, Moss",
+          "qty": 1,
+          "unit_price_gbp": 14.95
+        }
+      ],
+      "shipping_address": "65 Mill Lane, Bristol, BS6 7QP",
+      "carrier": "DPD",
+      "tracking": "DP8234199325GB",
+      "created_at": "2026-11-13T18:53:16Z",
+      "delivered_at": "2026-11-18T06:06:09Z",
+      "updated_at": "2026-11-18T06:06:09Z"
+    },
+    {
+      "id": "HF-291820",
+      "customer_id": 14,
+      "customer_email": "harriet.moore@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 93.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0114",
+          "name": "Washable Runner, 70 x 200cm, Navy",
+          "qty": 1,
+          "unit_price_gbp": 63.99
+        },
+        {
+          "sku": "HF-SKU-0082",
+          "name": "Copper Utensil Set, Cream",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "68 Church Street, Exeter, EX4 6PX",
+      "carrier": "Royal Mail",
+      "tracking": "RO7563799803GB",
+      "created_at": "2026-11-13T21:46:38Z",
+      "delivered_at": "2026-11-18T07:37:10Z",
+      "updated_at": "2026-11-18T07:37:10Z"
+    },
+    {
+      "id": "HF-222525",
+      "customer_id": 19,
+      "customer_email": "megan.patel@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 121.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0113",
+          "name": "Washable Runner, 70 x 200cm, Terracotta",
+          "qty": 2,
+          "unit_price_gbp": 60.99
+        }
+      ],
+      "shipping_address": "65 Mill Lane, Bristol, BS6 7QP",
+      "carrier": "Evri",
+      "tracking": "EV9335375776GB",
+      "created_at": "2026-11-14T03:40:43Z",
+      "delivered_at": "2026-11-16T14:36:26Z",
+      "updated_at": "2026-11-16T14:36:26Z"
+    },
+    {
+      "id": "HF-239213",
+      "customer_id": 37,
+      "customer_email": "daniel.robinson@example.co.uk",
+      "status": "cancelled",
+      "total_gbp": 286.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0108",
+          "name": "Jute Rug, 160 x 230cm, Navy",
+          "qty": 1,
+          "unit_price_gbp": 128.99
+        },
+        {
+          "sku": "HF-SKU-0001",
+          "name": "Washed Linen Duvet Cover Set, Double, White",
+          "qty": 2,
+          "unit_price_gbp": 78.99
+        }
+      ],
+      "shipping_address": "80 Mill Lane, Belfast, BT9 5EP",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-14T08:50:38Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-14T11:50:38Z"
+    },
+    {
+      "id": "HF-292259",
+      "customer_id": 6,
+      "customer_email": "lily.roberts@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 19.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0132",
+          "name": "Scented Candle, Fig & Cedar, Ink",
+          "qty": 1,
+          "unit_price_gbp": 19.99
+        }
+      ],
+      "shipping_address": "7 Church Street, Cardiff, CF24 4HQ",
+      "carrier": "Royal Mail",
+      "tracking": "RO9973225704GB",
+      "created_at": "2026-11-14T11:21:47Z",
+      "delivered_at": "2026-11-18T15:57:02Z",
+      "updated_at": "2026-11-18T15:57:02Z"
+    },
+    {
+      "id": "HF-282450",
+      "customer_id": 7,
+      "customer_email": "grace.cooper@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 31.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0017",
+          "name": "Seersucker Duvet Cover Set, Single, Sage",
+          "qty": 1,
+          "unit_price_gbp": 31.99
+        }
+      ],
+      "shipping_address": "30 Church Street, Belfast, BT9 5EP",
+      "carrier": "Evri",
+      "tracking": "EV2201042267GB",
+      "created_at": "2026-11-15T01:25:03Z",
+      "delivered_at": "2026-11-17T04:57:11Z",
+      "updated_at": "2026-11-17T04:57:11Z"
+    },
+    {
+      "id": "HF-255156",
+      "customer_id": 18,
+      "customer_email": "zara.edwards@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 84.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0113",
+          "name": "Washable Runner, 70 x 200cm, Terracotta",
+          "qty": 1,
+          "unit_price_gbp": 60.99
+        },
+        {
+          "sku": "HF-SKU-0049",
+          "name": "Pleated Lampshade, 30cm, Brass",
+          "qty": 1,
+          "unit_price_gbp": 23.99
+        }
+      ],
+      "shipping_address": "6 Station Road, Manchester, M20 4RT",
+      "carrier": "DPD",
+      "tracking": "DP8964676902GB",
+      "created_at": "2026-11-15T03:00:03Z",
+      "delivered_at": "2026-11-17T12:42:09Z",
+      "updated_at": "2026-11-17T12:42:09Z"
+    },
+    {
+      "id": "HF-283805",
+      "customer_id": 30,
+      "customer_email": "alfie.kelly@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 26.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0128",
+          "name": "Ribbed Glass Vase, Moss",
+          "qty": 1,
+          "unit_price_gbp": 26.99
+        }
+      ],
+      "shipping_address": "77 Church Street, Harrogate, HG1 2RE",
+      "carrier": "Evri",
+      "tracking": "EV2909030465GB",
+      "created_at": "2026-11-15T18:43:33Z",
+      "delivered_at": "2026-11-19T12:13:03Z",
+      "updated_at": "2026-11-19T12:13:03Z"
+    },
+    {
+      "id": "HF-273826",
+      "customer_id": 9,
+      "customer_email": "emily.wood@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 15.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0010",
+          "name": "Brushed Cotton Pillowcase Pair, White",
+          "qty": 1,
+          "unit_price_gbp": 15.95
+        }
+      ],
+      "shipping_address": "97 Church Street, Brighton, BN1 6HT",
+      "carrier": "Evri",
+      "tracking": "EV4900045408GB",
+      "created_at": "2026-11-16T07:57:56Z",
+      "delivered_at": "2026-11-17T23:31:27Z",
+      "updated_at": "2026-11-17T23:31:27Z"
+    },
+    {
+      "id": "HF-295853",
+      "customer_id": 38,
+      "customer_email": "ethan.morris@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 914.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0057",
+          "name": "Rechargeable LED Lantern, Opal",
+          "qty": 2,
+          "unit_price_gbp": 34.99
+        },
+        {
+          "sku": "HF-SKU-0125",
+          "name": "Faux Sheepskin Rug, Terracotta",
+          "qty": 1,
+          "unit_price_gbp": 46.99
+        },
+        {
+          "sku": "HF-SKU-0152",
+          "name": "Hybrid Memory Foam Mattress, Double",
+          "qty": 2,
+          "unit_price_gbp": 398.99
+        }
+      ],
+      "shipping_address": "39 High Street, Norwich, NR2 3PL",
+      "carrier": "Evri",
+      "tracking": "EV9119671383GB",
+      "created_at": "2026-11-16T18:47:28Z",
+      "delivered_at": "2026-11-21T12:13:50Z",
+      "updated_at": "2026-11-21T12:13:50Z"
+    },
+    {
+      "id": "HF-258044",
+      "customer_id": 25,
+      "customer_email": "noah.ward@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 34.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0056",
+          "name": "Rechargeable LED Lantern, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 34.99
+        }
+      ],
+      "shipping_address": "89 Mill Lane, Sheffield, S11 8TY",
+      "carrier": "Royal Mail",
+      "tracking": "RO7766956135GB",
+      "created_at": "2026-11-16T23:47:37Z",
+      "delivered_at": "2026-11-18T21:23:00Z",
+      "updated_at": "2026-11-18T21:23:00Z"
+    },
+    {
+      "id": "HF-285270",
+      "customer_id": 23,
+      "customer_email": "harry.taylor@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 19.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0136",
+          "name": "Linen Cushion Cover, 45cm, Sand",
+          "qty": 1,
+          "unit_price_gbp": 19.99
+        }
+      ],
+      "shipping_address": "77 High Street, Norwich, NR2 3PL",
+      "carrier": "Royal Mail",
+      "tracking": "RO1413033772GB",
+      "created_at": "2026-11-17T04:20:07Z",
+      "delivered_at": "2026-11-21T21:01:21Z",
+      "updated_at": "2026-11-21T21:01:21Z"
+    },
+    {
+      "id": "HF-276613",
+      "customer_id": 16,
+      "customer_email": "priya.brown@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 84.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0060",
+          "name": "Swing Arm Wall Light, Opal",
+          "qty": 1,
+          "unit_price_gbp": 60.99
+        },
+        {
+          "sku": "HF-SKU-0051",
+          "name": "Pleated Lampshade, 30cm, Opal",
+          "qty": 1,
+          "unit_price_gbp": 23.99
+        }
+      ],
+      "shipping_address": "39 Mill Lane, Leeds, LS6 2AB",
+      "carrier": "Royal Mail",
+      "tracking": "RO7221205558GB",
+      "created_at": "2026-11-17T09:43:00Z",
+      "delivered_at": "2026-11-20T18:40:54Z",
+      "updated_at": "2026-11-20T18:40:54Z"
+    },
+    {
+      "id": "HF-254985",
+      "customer_id": 24,
+      "customer_email": "jack.price@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 21.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0091",
+          "name": "Ribbed Bath Mat, White",
+          "qty": 1,
+          "unit_price_gbp": 21.99
+        }
+      ],
+      "shipping_address": "13 Mill Lane, Brighton, BN1 6HT",
+      "carrier": "Royal Mail",
+      "tracking": "RO3501915534GB",
+      "created_at": "2026-11-17T20:58:45Z",
+      "delivered_at": "2026-11-21T15:30:36Z",
+      "updated_at": "2026-11-21T15:30:36Z"
+    },
+    {
+      "id": "HF-294860",
+      "customer_id": 17,
+      "customer_email": "aisha.harris@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 481.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0036",
+          "name": "Ripon Double Bed Frame, Black",
+          "qty": 1,
+          "unit_price_gbp": 453.99
+        },
+        {
+          "sku": "HF-SKU-0142",
+          "name": "Woven Storage Basket, Sand",
+          "qty": 1,
+          "unit_price_gbp": 27.99
+        }
+      ],
+      "shipping_address": "37 Church Street, York, YO10 3DD",
+      "carrier": "DPD",
+      "tracking": "DP4722466887GB",
+      "created_at": "2026-11-17T21:11:44Z",
+      "delivered_at": "2026-11-21T16:40:10Z",
+      "updated_at": "2026-11-21T16:40:10Z"
+    },
+    {
+      "id": "HF-249643",
+      "customer_id": 10,
+      "customer_email": "poppy.baker@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 23.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0146",
+          "name": "Stoneware Table Planter, Moss",
+          "qty": 1,
+          "unit_price_gbp": 23.99
+        }
+      ],
+      "shipping_address": "75 Mill Lane, Sheffield, S11 8TY",
+      "carrier": "DPD",
+      "tracking": "DP9680346530GB",
+      "created_at": "2026-11-18T00:18:51Z",
+      "delivered_at": "2026-11-22T10:58:02Z",
+      "updated_at": "2026-11-22T10:58:02Z"
+    },
+    {
+      "id": "HF-242120",
+      "customer_id": 3,
+      "customer_email": "isla.smith@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 11.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0078",
+          "name": "Linen Tea Towel Pair, Slate",
+          "qty": 1,
+          "unit_price_gbp": 11.95
+        }
+      ],
+      "shipping_address": "77 The Green, Manchester, M20 4RT",
+      "carrier": "Evri",
+      "tracking": "EV6079464287GB",
+      "created_at": "2026-11-18T06:30:07Z",
+      "delivered_at": "2026-11-20T03:38:15Z",
+      "updated_at": "2026-11-20T03:38:15Z"
+    },
+    {
+      "id": "HF-263721",
+      "customer_id": 3,
+      "customer_email": "isla.smith@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 17.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0087",
+          "name": "Turkish Cotton Bath Towel, Blush",
+          "qty": 1,
+          "unit_price_gbp": 17.95
+        }
+      ],
+      "shipping_address": "77 The Green, Manchester, M20 4RT",
+      "carrier": "Royal Mail",
+      "tracking": "RO1470921652GB",
+      "created_at": "2026-11-18T09:24:50Z",
+      "delivered_at": "2026-11-22T12:43:28Z",
+      "updated_at": "2026-11-22T12:43:28Z"
+    },
+    {
+      "id": "HF-208800",
+      "customer_id": 27,
+      "customer_email": "thomas.jackson@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 207.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0045",
+          "name": "Arc Floor Lamp, Opal",
+          "qty": 1,
+          "unit_price_gbp": 118.99
+        },
+        {
+          "sku": "HF-SKU-0139",
+          "name": "Framed Botanical Print, Sand",
+          "qty": 1,
+          "unit_price_gbp": 38.99
+        },
+        {
+          "sku": "HF-SKU-0015",
+          "name": "Waffle Knit Throw, Charcoal",
+          "qty": 1,
+          "unit_price_gbp": 49.99
+        }
+      ],
+      "shipping_address": "7 The Green, Douglas, IM2 3LN",
+      "carrier": "Evri",
+      "tracking": "EV3584687305GB",
+      "created_at": "2026-11-18T21:27:34Z",
+      "delivered_at": "2026-11-22T09:09:37Z",
+      "updated_at": "2026-11-22T09:09:37Z"
+    },
+    {
+      "id": "HF-250371",
+      "customer_id": 13,
+      "customer_email": "charlotte.hughes@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 105.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0001",
+          "name": "Washed Linen Duvet Cover Set, Double, White",
+          "qty": 1,
+          "unit_price_gbp": 78.99
+        },
+        {
+          "sku": "HF-SKU-0073",
+          "name": "Oak Chopping Board, Cream",
+          "qty": 1,
+          "unit_price_gbp": 26.99
+        }
+      ],
+      "shipping_address": "74 Mill Lane, Nottingham, NG7 1AA",
+      "carrier": "Royal Mail",
+      "tracking": "RO9271874656GB",
+      "created_at": "2026-11-19T05:51:10Z",
+      "delivered_at": "2026-11-21T03:48:14Z",
+      "updated_at": "2026-11-21T03:48:14Z"
+    },
+    {
+      "id": "HF-215340",
+      "customer_id": 8,
+      "customer_email": "sophie.wright@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 20.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0011",
+          "name": "Brushed Cotton Pillowcase Pair, Sage",
+          "qty": 1,
+          "unit_price_gbp": 20.99
+        }
+      ],
+      "shipping_address": "89 Victoria Road, Norwich, NR2 3PL",
+      "carrier": "DPD",
+      "tracking": "DP5876056411GB",
+      "created_at": "2026-11-19T11:15:37Z",
+      "delivered_at": "2026-11-23T00:19:37Z",
+      "updated_at": "2026-11-23T00:19:37Z"
+    },
+    {
+      "id": "HF-251373",
+      "customer_id": 5,
+      "customer_email": "freya.campbell@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 31.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0016",
+          "name": "Seersucker Duvet Cover Set, Single, White",
+          "qty": 1,
+          "unit_price_gbp": 31.99
+        }
+      ],
+      "shipping_address": "17 Church Street, Edinburgh, EH9 1LT",
+      "carrier": "Evri",
+      "tracking": "EV4064885218GB",
+      "created_at": "2026-11-19T23:43:25Z",
+      "delivered_at": "2026-11-24T23:38:44Z",
+      "updated_at": "2026-11-24T23:38:44Z"
+    },
+    {
+      "id": "HF-271200",
+      "customer_id": 22,
+      "customer_email": "george.king@example.co.uk",
+      "status": "delivered",
+      "total_gbp": 372.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0122",
+          "name": "Doormat, Terracotta",
+          "qty": 1,
+          "unit_price_gbp": 19.99
+        },
+        {
+          "sku": "HF-SKU-0020",
+          "name": "Hungarian Goose Down Pillow, Sage",
+          "qty": 1,
+          "unit_price_gbp": 54.99
+        },
+        {
+          "sku": "HF-SKU-0111",
+          "name": "Berber Style Wool Rug, 120 x 170cm, Navy",
+          "qty": 2,
+          "unit_price_gbp": 148.99
+        }
+      ],
+      "shipping_address": "50 Station Road, Belfast, BT9 5EP",
+      "carrier": "Royal Mail",
+      "tracking": "RO2191482100GB",
+      "created_at": "2026-11-20T04:52:58Z",
+      "delivered_at": "2026-11-22T13:41:27Z",
+      "updated_at": "2026-11-22T13:41:27Z"
+    },
+    {
+      "id": "HF-230449",
+      "customer_id": 24,
+      "customer_email": "jack.price@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 19.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0071",
+          "name": "Glass Storage Jar Set of 3, Sage",
+          "qty": 1,
+          "unit_price_gbp": 19.99
+        }
+      ],
+      "shipping_address": "13 Mill Lane, Brighton, BN1 6HT",
+      "carrier": "Royal Mail",
+      "tracking": "RO5378072492GB",
+      "created_at": "2026-11-23T01:19:33Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T04:19:33Z"
+    },
+    {
+      "id": "HF-219865",
+      "customer_id": 9,
+      "customer_email": "emily.wood@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 624.92,
+      "items": [
+        {
+          "sku": "HF-SKU-0078",
+          "name": "Linen Tea Towel Pair, Slate",
+          "qty": 1,
+          "unit_price_gbp": 11.95
+        },
+        {
+          "sku": "HF-SKU-0016",
+          "name": "Seersucker Duvet Cover Set, Single, White",
+          "qty": 2,
+          "unit_price_gbp": 31.99
+        },
+        {
+          "sku": "HF-SKU-0040",
+          "name": "Hebden Sideboard, Natural Oak",
+          "qty": 1,
+          "unit_price_gbp": 548.99
+        }
+      ],
+      "shipping_address": "97 Church Street, Brighton, BN1 6HT",
+      "carrier": "DPD",
+      "tracking": "DP4571989078GB",
+      "created_at": "2026-11-23T06:16:45Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T10:16:45Z"
+    },
+    {
+      "id": "HF-243695",
+      "customer_id": 34,
+      "customer_email": "owen.jones@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 1827.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0029",
+          "name": "Linton 3 Seater Sofa, Walnut",
+          "qty": 2,
+          "unit_price_gbp": 898.99
+        },
+        {
+          "sku": "HF-SKU-0082",
+          "name": "Copper Utensil Set, Cream",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "49 Church Street, Bristol, BS6 7QP",
+      "carrier": "DPD",
+      "tracking": "DP4466963140GB",
+      "created_at": "2026-11-23T10:33:29Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T14:33:29Z"
+    },
+    {
+      "id": "HF-269608",
+      "customer_id": 31,
+      "customer_email": "rhys.clarke@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 9.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0104",
+          "name": "Hand Towel, Grey",
+          "qty": 1,
+          "unit_price_gbp": 9.95
+        }
+      ],
+      "shipping_address": "14 The Green, Leeds, LS6 2AB",
+      "carrier": "Royal Mail",
+      "tracking": "RO4821546730GB",
+      "created_at": "2026-11-23T17:27:38Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T13:27:38Z"
+    },
+    {
+      "id": "HF-253047",
+      "customer_id": 21,
+      "customer_email": "oliver.morgan@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 31.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0083",
+          "name": "Copper Utensil Set, Sage",
+          "qty": 1,
+          "unit_price_gbp": 31.99
+        }
+      ],
+      "shipping_address": "38 The Green, Cardiff, CF24 4HQ",
+      "carrier": "DPD",
+      "tracking": "DP5002967819GB",
+      "created_at": "2026-11-23T17:51:28Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-23T20:51:28Z"
+    },
+    {
+      "id": "HF-272317",
+      "customer_id": 37,
+      "customer_email": "daniel.robinson@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 17.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0087",
+          "name": "Turkish Cotton Bath Towel, Blush",
+          "qty": 1,
+          "unit_price_gbp": 17.95
+        }
+      ],
+      "shipping_address": "80 Mill Lane, Belfast, BT9 5EP",
+      "carrier": "Evri",
+      "tracking": "EV5110223335GB",
+      "created_at": "2026-11-23T18:50:24Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-23T19:50:24Z"
+    },
+    {
+      "id": "HF-254885",
+      "customer_id": 36,
+      "customer_email": "mohammed.williams@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 411.91,
+      "items": [
+        {
+          "sku": "HF-SKU-0010",
+          "name": "Brushed Cotton Pillowcase Pair, White",
+          "qty": 1,
+          "unit_price_gbp": 15.95
+        },
+        {
+          "sku": "HF-SKU-0053",
+          "name": "Ceiling Pendant Light, Matt Black",
+          "qty": 2,
+          "unit_price_gbp": 68.99
+        },
+        {
+          "sku": "HF-SKU-0025",
+          "name": "Ashby Bedside Table, Natural Oak",
+          "qty": 2,
+          "unit_price_gbp": 128.99
+        }
+      ],
+      "shipping_address": "11 Mill Lane, Cardiff, CF24 4HQ",
+      "carrier": "DPD",
+      "tracking": "DP4013132695GB",
+      "created_at": "2026-11-23T21:31:57Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T21:31:57Z"
+    },
+    {
+      "id": "HF-275984",
+      "customer_id": 19,
+      "customer_email": "megan.patel@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 213.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0069",
+          "name": "Enamel Casserole Dish, 24cm, Slate",
+          "qty": 2,
+          "unit_price_gbp": 56.99
+        },
+        {
+          "sku": "HF-SKU-0007",
+          "name": "Egyptian Cotton Fitted Sheet, Double, White",
+          "qty": 2,
+          "unit_price_gbp": 33.99
+        },
+        {
+          "sku": "HF-SKU-0083",
+          "name": "Copper Utensil Set, Sage",
+          "qty": 1,
+          "unit_price_gbp": 31.99
+        }
+      ],
+      "shipping_address": "65 Mill Lane, Bristol, BS6 7QP",
+      "carrier": "Royal Mail",
+      "tracking": "RO5423051042GB",
+      "created_at": "2026-11-23T22:07:06Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T13:07:06Z"
+    },
+    {
+      "id": "HF-251334",
+      "customer_id": 26,
+      "customer_email": "charlie.hall@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 217.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0052",
+          "name": "Ceiling Pendant Light, Brass",
+          "qty": 2,
+          "unit_price_gbp": 68.99
+        },
+        {
+          "sku": "HF-SKU-0055",
+          "name": "Rechargeable LED Lantern, Brass",
+          "qty": 1,
+          "unit_price_gbp": 34.99
+        },
+        {
+          "sku": "HF-SKU-0013",
+          "name": "Waffle Knit Throw, White",
+          "qty": 1,
+          "unit_price_gbp": 44.99
+        }
+      ],
+      "shipping_address": "84 Oak Close, Inverness, IV2 4JB",
+      "carrier": "DPD",
+      "tracking": "DP8593330278GB",
+      "created_at": "2026-11-24T04:07:16Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T05:07:16Z"
+    },
+    {
+      "id": "HF-253258",
+      "customer_id": 38,
+      "customer_email": "ethan.morris@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 179.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0059",
+          "name": "Swing Arm Wall Light, Matt Black",
+          "qty": 2,
+          "unit_price_gbp": 58.99
+        },
+        {
+          "sku": "HF-SKU-0089",
+          "name": "Bath Sheet, Grey",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        },
+        {
+          "sku": "HF-SKU-0083",
+          "name": "Copper Utensil Set, Sage",
+          "qty": 1,
+          "unit_price_gbp": 31.99
+        }
+      ],
+      "shipping_address": "39 High Street, Norwich, NR2 3PL",
+      "carrier": "Evri",
+      "tracking": "EV7576307871GB",
+      "created_at": "2026-11-24T05:33:25Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T12:33:25Z"
+    },
+    {
+      "id": "HF-249641",
+      "customer_id": 11,
+      "customer_email": "ella.davies@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 29.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0143",
+          "name": "Woven Storage Basket, Moss",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "83 Station Road, Inverness, IV2 4JB",
+      "carrier": "Royal Mail",
+      "tracking": "RO9269871201GB",
+      "created_at": "2026-11-24T09:46:52Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T22:46:52Z"
+    },
+    {
+      "id": "HF-229863",
+      "customer_id": 28,
+      "customer_email": "james.green@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 29.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0082",
+          "name": "Copper Utensil Set, Cream",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "12 Church Street, Nottingham, NG7 1AA",
+      "carrier": "Evri",
+      "tracking": "EV1158142016GB",
+      "created_at": "2026-11-24T12:56:04Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T17:56:04Z"
+    },
+    {
+      "id": "HF-280822",
+      "customer_id": 16,
+      "customer_email": "priya.brown@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 247.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0069",
+          "name": "Enamel Casserole Dish, 24cm, Slate",
+          "qty": 2,
+          "unit_price_gbp": 56.99
+        },
+        {
+          "sku": "HF-SKU-0121",
+          "name": "Doormat, Natural",
+          "qty": 1,
+          "unit_price_gbp": 19.99
+        },
+        {
+          "sku": "HF-SKU-0021",
+          "name": "Hungarian Goose Down Pillow, Charcoal",
+          "qty": 2,
+          "unit_price_gbp": 56.99
+        }
+      ],
+      "shipping_address": "39 Mill Lane, Leeds, LS6 2AB",
+      "carrier": "DPD",
+      "tracking": "DP8000757526GB",
+      "created_at": "2026-11-24T13:31:59Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T09:31:59Z"
+    },
+    {
+      "id": "HF-288680",
+      "customer_id": 30,
+      "customer_email": "alfie.kelly@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 150.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0058",
+          "name": "Swing Arm Wall Light, Brass",
+          "qty": 1,
+          "unit_price_gbp": 60.99
+        },
+        {
+          "sku": "HF-SKU-0124",
+          "name": "Faux Sheepskin Rug, Natural",
+          "qty": 2,
+          "unit_price_gbp": 44.99
+        }
+      ],
+      "shipping_address": "77 Church Street, Harrogate, HG1 2RE",
+      "carrier": "DPD",
+      "tracking": "DP4065420211GB",
+      "created_at": "2026-11-24T13:46:12Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T04:46:12Z"
+    },
+    {
+      "id": "HF-263401",
+      "customer_id": 38,
+      "customer_email": "ethan.morris@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 33.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0007",
+          "name": "Egyptian Cotton Fitted Sheet, Double, White",
+          "qty": 1,
+          "unit_price_gbp": 33.99
+        }
+      ],
+      "shipping_address": "39 High Street, Norwich, NR2 3PL",
+      "carrier": "DPD",
+      "tracking": "DP4555778932GB",
+      "created_at": "2026-11-24T18:27:35Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T21:27:35Z"
+    },
+    {
+      "id": "HF-217087",
+      "customer_id": 17,
+      "customer_email": "aisha.harris@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 49.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0128",
+          "name": "Ribbed Glass Vase, Moss",
+          "qty": 1,
+          "unit_price_gbp": 26.99
+        },
+        {
+          "sku": "HF-SKU-0131",
+          "name": "Scented Candle, Fig & Cedar, Moss",
+          "qty": 1,
+          "unit_price_gbp": 22.99
+        }
+      ],
+      "shipping_address": "37 Church Street, York, YO10 3DD",
+      "carrier": "DPD",
+      "tracking": "DP9965016491GB",
+      "created_at": "2026-11-24T19:02:00Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T20:02:00Z"
+    },
+    {
+      "id": "HF-297073",
+      "customer_id": 22,
+      "customer_email": "george.king@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 566.87,
+      "items": [
+        {
+          "sku": "HF-SKU-0076",
+          "name": "Linen Tea Towel Pair, Cream",
+          "qty": 2,
+          "unit_price_gbp": 13.95
+        },
+        {
+          "sku": "HF-SKU-0034",
+          "name": "Ripon Double Bed Frame, Natural Oak",
+          "qty": 1,
+          "unit_price_gbp": 448.99
+        },
+        {
+          "sku": "HF-SKU-0014",
+          "name": "Waffle Knit Throw, Sage",
+          "qty": 2,
+          "unit_price_gbp": 44.99
+        }
+      ],
+      "shipping_address": "50 Station Road, Belfast, BT9 5EP",
+      "carrier": "DPD",
+      "tracking": "DP6370774068GB",
+      "created_at": "2026-11-24T19:39:39Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T14:39:39Z"
+    },
+    {
+      "id": "HF-237457",
+      "customer_id": 8,
+      "customer_email": "sophie.wright@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 123.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0052",
+          "name": "Ceiling Pendant Light, Brass",
+          "qty": 1,
+          "unit_price_gbp": 68.99
+        },
+        {
+          "sku": "HF-SKU-0020",
+          "name": "Hungarian Goose Down Pillow, Sage",
+          "qty": 1,
+          "unit_price_gbp": 54.99
+        }
+      ],
+      "shipping_address": "89 Victoria Road, Norwich, NR2 3PL",
+      "carrier": "Evri",
+      "tracking": "EV3478315291GB",
+      "created_at": "2026-11-24T19:41:47Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T04:41:47Z"
+    },
+    {
+      "id": "HF-279123",
+      "customer_id": 19,
+      "customer_email": "megan.patel@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 83.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0134",
+          "name": "Round Wall Mirror, 60cm, Moss",
+          "qty": 1,
+          "unit_price_gbp": 83.99
+        }
+      ],
+      "shipping_address": "65 Mill Lane, Bristol, BS6 7QP",
+      "carrier": "Evri",
+      "tracking": "EV5268806740GB",
+      "created_at": "2026-11-24T20:28:49Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-24T23:28:49Z"
+    },
+    {
+      "id": "HF-200864",
+      "customer_id": 10,
+      "customer_email": "poppy.baker@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 24.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0164",
+          "name": "Waterproof Mattress Protector, Double",
+          "qty": 1,
+          "unit_price_gbp": 24.99
+        }
+      ],
+      "shipping_address": "75 Mill Lane, Sheffield, S11 8TY",
+      "carrier": "DPD",
+      "tracking": "DP5300336406GB",
+      "created_at": "2026-11-24T22:44:17Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T03:44:17Z"
+    },
+    {
+      "id": "HF-260504",
+      "customer_id": 10,
+      "customer_email": "poppy.baker@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 818.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0150",
+          "name": "Pocket Sprung 1000 Mattress, King",
+          "qty": 2,
+          "unit_price_gbp": 334.99
+        },
+        {
+          "sku": "HF-SKU-0111",
+          "name": "Berber Style Wool Rug, 120 x 170cm, Navy",
+          "qty": 1,
+          "unit_price_gbp": 148.99
+        }
+      ],
+      "shipping_address": "75 Mill Lane, Sheffield, S11 8TY",
+      "carrier": "Royal Mail",
+      "tracking": "RO6201089849GB",
+      "created_at": "2026-11-24T22:47:11Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T05:47:11Z"
+    },
+    {
+      "id": "HF-223096",
+      "customer_id": 36,
+      "customer_email": "mohammed.williams@example.co.uk",
+      "status": "processing",
+      "total_gbp": 537.94,
+      "items": [
+        {
+          "sku": "HF-SKU-0141",
+          "name": "Framed Botanical Print, Ink",
+          "qty": 2,
+          "unit_price_gbp": 38.99
+        },
+        {
+          "sku": "HF-SKU-0109",
+          "name": "Berber Style Wool Rug, 120 x 170cm, Natural",
+          "qty": 2,
+          "unit_price_gbp": 148.99
+        },
+        {
+          "sku": "HF-SKU-0135",
+          "name": "Round Wall Mirror, 60cm, Ink",
+          "qty": 2,
+          "unit_price_gbp": 80.99
+        }
+      ],
+      "shipping_address": "11 Mill Lane, Cardiff, CF24 4HQ",
+      "carrier": "Royal Mail",
+      "tracking": null,
+      "created_at": "2026-11-25T04:41:24Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T04:41:24Z"
+    },
+    {
+      "id": "HF-252233",
+      "customer_id": 1,
+      "customer_email": "olivia.thompson@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 398.95,
+      "items": [
+        {
+          "sku": "HF-SKU-0146",
+          "name": "Stoneware Table Planter, Moss",
+          "qty": 2,
+          "unit_price_gbp": 23.99
+        },
+        {
+          "sku": "HF-SKU-0032",
+          "name": "Barnsley Bookcase, Walnut",
+          "qty": 1,
+          "unit_price_gbp": 250.99
+        },
+        {
+          "sku": "HF-SKU-0062",
+          "name": "Glass Globe Desk Lamp, Matt Black",
+          "qty": 2,
+          "unit_price_gbp": 49.99
+        }
+      ],
+      "shipping_address": "29 Oak Close, Leeds, LS6 2AB",
+      "carrier": "Royal Mail",
+      "tracking": "RO2185479228GB",
+      "created_at": "2026-11-25T04:46:39Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T18:46:39Z"
+    },
+    {
+      "id": "HF-281097",
+      "customer_id": 19,
+      "customer_email": "megan.patel@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 336.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0108",
+          "name": "Jute Rug, 160 x 230cm, Navy",
+          "qty": 2,
+          "unit_price_gbp": 128.99
+        },
+        {
+          "sku": "HF-SKU-0075",
+          "name": "Oak Chopping Board, Slate",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        },
+        {
+          "sku": "HF-SKU-0117",
+          "name": "Recycled Cotton Rug, 90 x 150cm, Navy",
+          "qty": 1,
+          "unit_price_gbp": 48.99
+        }
+      ],
+      "shipping_address": "65 Mill Lane, Bristol, BS6 7QP",
+      "carrier": "Royal Mail",
+      "tracking": "RO7714242774GB",
+      "created_at": "2026-11-25T05:15:00Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T09:15:00Z"
+    },
+    {
+      "id": "HF-296172",
+      "customer_id": 8,
+      "customer_email": "sophie.wright@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 907.98,
+      "items": [
+        {
+          "sku": "HF-SKU-0036",
+          "name": "Ripon Double Bed Frame, Black",
+          "qty": 2,
+          "unit_price_gbp": 453.99
+        }
+      ],
+      "shipping_address": "89 Victoria Road, Norwich, NR2 3PL",
+      "carrier": "DPD",
+      "tracking": "DP3676815596GB",
+      "created_at": "2026-11-25T05:28:48Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T00:28:48Z"
+    },
+    {
+      "id": "HF-287053",
+      "customer_id": 36,
+      "customer_email": "mohammed.williams@example.co.uk",
+      "status": "in_transit",
+      "total_gbp": 597.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0061",
+          "name": "Glass Globe Desk Lamp, Brass",
+          "qty": 2,
+          "unit_price_gbp": 49.99
+        },
+        {
+          "sku": "HF-SKU-0031",
+          "name": "Barnsley Bookcase, Natural Oak",
+          "qty": 2,
+          "unit_price_gbp": 248.99
+        }
+      ],
+      "shipping_address": "11 Mill Lane, Cardiff, CF24 4HQ",
+      "carrier": "Evri",
+      "tracking": "EV6241264268GB",
+      "created_at": "2026-11-25T06:45:45Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T10:45:45Z"
+    },
+    {
+      "id": "HF-294071",
+      "customer_id": 24,
+      "customer_email": "jack.price@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 24.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0164",
+          "name": "Waterproof Mattress Protector, Double",
+          "qty": 1,
+          "unit_price_gbp": 24.99
+        }
+      ],
+      "shipping_address": "13 Mill Lane, Brighton, BN1 6HT",
+      "carrier": "Evri",
+      "tracking": "EV1637397598GB",
+      "created_at": "2026-11-25T07:33:40Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T23:33:40Z"
+    },
+    {
+      "id": "HF-271622",
+      "customer_id": 22,
+      "customer_email": "george.king@example.co.uk",
+      "status": "processing",
+      "total_gbp": 23.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0146",
+          "name": "Stoneware Table Planter, Moss",
+          "qty": 1,
+          "unit_price_gbp": 23.99
+        }
+      ],
+      "shipping_address": "50 Station Road, Belfast, BT9 5EP",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-25T07:45:09Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T07:45:09Z"
+    },
+    {
+      "id": "HF-287972",
+      "customer_id": 30,
+      "customer_email": "alfie.kelly@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 19.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0071",
+          "name": "Glass Storage Jar Set of 3, Sage",
+          "qty": 1,
+          "unit_price_gbp": 19.99
+        }
+      ],
+      "shipping_address": "77 Church Street, Harrogate, HG1 2RE",
+      "carrier": "DPD",
+      "tracking": "DP4830044060GB",
+      "created_at": "2026-11-25T11:24:53Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T07:24:53Z"
+    },
+    {
+      "id": "HF-254407",
+      "customer_id": 23,
+      "customer_email": "harry.taylor@example.co.uk",
+      "status": "processing",
+      "total_gbp": 367.94,
+      "items": [
+        {
+          "sku": "HF-SKU-0090",
+          "name": "Bath Sheet, Blush",
+          "qty": 2,
+          "unit_price_gbp": 32.99
+        },
+        {
+          "sku": "HF-SKU-0123",
+          "name": "Doormat, Navy",
+          "qty": 2,
+          "unit_price_gbp": 21.99
+        },
+        {
+          "sku": "HF-SKU-0108",
+          "name": "Jute Rug, 160 x 230cm, Navy",
+          "qty": 2,
+          "unit_price_gbp": 128.99
+        }
+      ],
+      "shipping_address": "77 High Street, Norwich, NR2 3PL",
+      "carrier": "Royal Mail",
+      "tracking": null,
+      "created_at": "2026-11-25T12:13:03Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T12:13:03Z"
+    },
+    {
+      "id": "HF-269546",
+      "customer_id": 26,
+      "customer_email": "charlie.hall@example.co.uk",
+      "status": "processing",
+      "total_gbp": 25.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0050",
+          "name": "Pleated Lampshade, 30cm, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 25.99
+        }
+      ],
+      "shipping_address": "84 Oak Close, Inverness, IV2 4JB",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-25T15:44:10Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T15:44:10Z"
+    },
+    {
+      "id": "HF-257811",
+      "customer_id": 34,
+      "customer_email": "owen.jones@example.co.uk",
+      "status": "processing",
+      "total_gbp": 41.89,
+      "items": [
+        {
+          "sku": "HF-SKU-0103",
+          "name": "Hand Towel, White",
+          "qty": 2,
+          "unit_price_gbp": 9.95
+        },
+        {
+          "sku": "HF-SKU-0091",
+          "name": "Ribbed Bath Mat, White",
+          "qty": 1,
+          "unit_price_gbp": 21.99
+        }
+      ],
+      "shipping_address": "49 Church Street, Bristol, BS6 7QP",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-25T15:46:40Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T15:46:40Z"
+    },
+    {
+      "id": "HF-222675",
+      "customer_id": 21,
+      "customer_email": "oliver.morgan@example.co.uk",
+      "status": "dispatched",
+      "total_gbp": 118.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0118",
+          "name": "Round Wool Rug, 150cm, Natural",
+          "qty": 1,
+          "unit_price_gbp": 118.99
+        }
+      ],
+      "shipping_address": "38 The Green, Cardiff, CF24 4HQ",
+      "carrier": "Royal Mail",
+      "tracking": "RO1543728831GB",
+      "created_at": "2026-11-25T17:27:50Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T03:27:50Z"
+    },
+    {
+      "id": "HF-260255",
+      "customer_id": 24,
+      "customer_email": "jack.price@example.co.uk",
+      "status": "processing",
+      "total_gbp": 34.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0057",
+          "name": "Rechargeable LED Lantern, Opal",
+          "qty": 1,
+          "unit_price_gbp": 34.99
+        }
+      ],
+      "shipping_address": "13 Mill Lane, Brighton, BN1 6HT",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-25T20:16:28Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T20:16:28Z"
+    },
+    {
+      "id": "HF-272370",
+      "customer_id": 33,
+      "customer_email": "hamish.shah@example.co.uk",
+      "status": "processing",
+      "total_gbp": 648.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0022",
+          "name": "Holt Dining Table, 6 Seater, Natural Oak",
+          "qty": 1,
+          "unit_price_gbp": 648.99
+        }
+      ],
+      "shipping_address": "38 High Street, Manchester, M20 4RT",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-25T22:16:21Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T22:16:21Z"
+    },
+    {
+      "id": "HF-222879",
+      "customer_id": 29,
+      "customer_email": "william.lewis@example.co.uk",
+      "status": "processing",
+      "total_gbp": 630.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0020",
+          "name": "Hungarian Goose Down Pillow, Sage",
+          "qty": 1,
+          "unit_price_gbp": 54.99
+        },
+        {
+          "sku": "HF-SKU-0040",
+          "name": "Hebden Sideboard, Natural Oak",
+          "qty": 1,
+          "unit_price_gbp": 548.99
+        },
+        {
+          "sku": "HF-SKU-0073",
+          "name": "Oak Chopping Board, Cream",
+          "qty": 1,
+          "unit_price_gbp": 26.99
+        }
+      ],
+      "shipping_address": "84 Park Avenue, Exeter, EX4 6PX",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-25T23:08:16Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-25T23:08:16Z"
+    },
+    {
+      "id": "HF-291181",
+      "customer_id": 40,
+      "customer_email": "joseph.hill@example.co.uk",
+      "status": "processing",
+      "total_gbp": 44.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0013",
+          "name": "Waffle Knit Throw, White",
+          "qty": 1,
+          "unit_price_gbp": 44.99
+        }
+      ],
+      "shipping_address": "80 Park Avenue, Sheffield, S11 8TY",
+      "carrier": "Evri",
+      "tracking": null,
+      "created_at": "2026-11-26T00:52:40Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T00:52:40Z"
+    },
+    {
+      "id": "HF-209768",
+      "customer_id": 30,
+      "customer_email": "alfie.kelly@example.co.uk",
+      "status": "processing",
+      "total_gbp": 22.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0131",
+          "name": "Scented Candle, Fig & Cedar, Moss",
+          "qty": 1,
+          "unit_price_gbp": 22.99
+        }
+      ],
+      "shipping_address": "77 Church Street, Harrogate, HG1 2RE",
+      "carrier": "Evri",
+      "tracking": null,
+      "created_at": "2026-11-26T02:39:58Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T02:39:58Z"
+    },
+    {
+      "id": "HF-258950",
+      "customer_id": 38,
+      "customer_email": "ethan.morris@example.co.uk",
+      "status": "processing",
+      "total_gbp": 24.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0164",
+          "name": "Waterproof Mattress Protector, Double",
+          "qty": 1,
+          "unit_price_gbp": 24.99
+        }
+      ],
+      "shipping_address": "39 High Street, Norwich, NR2 3PL",
+      "carrier": "Evri",
+      "tracking": null,
+      "created_at": "2026-11-26T06:50:48Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T06:50:48Z"
+    },
+    {
+      "id": "HF-218046",
+      "customer_id": 5,
+      "customer_email": "freya.campbell@example.co.uk",
+      "status": "processing",
+      "total_gbp": 29.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0075",
+          "name": "Oak Chopping Board, Slate",
+          "qty": 1,
+          "unit_price_gbp": 29.99
+        }
+      ],
+      "shipping_address": "17 Church Street, Edinburgh, EH9 1LT",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-26T08:15:30Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T08:15:30Z"
+    },
+    {
+      "id": "HF-257256",
+      "customer_id": 27,
+      "customer_email": "thomas.jackson@example.co.uk",
+      "status": "processing",
+      "total_gbp": 148.89,
+      "items": [
+        {
+          "sku": "HF-SKU-0025",
+          "name": "Ashby Bedside Table, Natural Oak",
+          "qty": 1,
+          "unit_price_gbp": 128.99
+        },
+        {
+          "sku": "HF-SKU-0105",
+          "name": "Hand Towel, Blush",
+          "qty": 2,
+          "unit_price_gbp": 9.95
+        }
+      ],
+      "shipping_address": "7 The Green, Douglas, IM2 3LN",
+      "carrier": "Evri",
+      "tracking": null,
+      "created_at": "2026-11-26T09:05:59Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T09:05:59Z"
+    },
+    {
+      "id": "HF-282124",
+      "customer_id": 28,
+      "customer_email": "james.green@example.co.uk",
+      "status": "processing",
+      "total_gbp": 23.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0147",
+          "name": "Stoneware Table Planter, Ink",
+          "qty": 1,
+          "unit_price_gbp": 23.99
+        }
+      ],
+      "shipping_address": "12 Church Street, Nottingham, NG7 1AA",
+      "carrier": "Evri",
+      "tracking": null,
+      "created_at": "2026-11-26T11:34:44Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T11:34:44Z"
+    },
+    {
+      "id": "HF-259799",
+      "customer_id": 32,
+      "customer_email": "callum.walker@example.co.uk",
+      "status": "processing",
+      "total_gbp": 495.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0025",
+          "name": "Ashby Bedside Table, Natural Oak",
+          "qty": 2,
+          "unit_price_gbp": 128.99
+        },
+        {
+          "sku": "HF-SKU-0045",
+          "name": "Arc Floor Lamp, Opal",
+          "qty": 1,
+          "unit_price_gbp": 118.99
+        },
+        {
+          "sku": "HF-SKU-0118",
+          "name": "Round Wool Rug, 150cm, Natural",
+          "qty": 1,
+          "unit_price_gbp": 118.99
+        }
+      ],
+      "shipping_address": "92 Victoria Road, York, YO10 3DD",
+      "carrier": "Evri",
+      "tracking": null,
+      "created_at": "2026-11-26T13:31:47Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T13:31:47Z"
+    },
+    {
+      "id": "HF-208985",
+      "customer_id": 31,
+      "customer_email": "rhys.clarke@example.co.uk",
+      "status": "processing",
+      "total_gbp": 33.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0008",
+          "name": "Egyptian Cotton Fitted Sheet, Double, Sage",
+          "qty": 1,
+          "unit_price_gbp": 33.99
+        }
+      ],
+      "shipping_address": "14 The Green, Leeds, LS6 2AB",
+      "carrier": "Evri",
+      "tracking": null,
+      "created_at": "2026-11-26T13:44:16Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T13:44:16Z"
+    },
+    {
+      "id": "HF-274371",
+      "customer_id": 25,
+      "customer_email": "noah.ward@example.co.uk",
+      "status": "processing",
+      "total_gbp": 699.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0111",
+          "name": "Berber Style Wool Rug, 120 x 170cm, Navy",
+          "qty": 2,
+          "unit_price_gbp": 148.99
+        },
+        {
+          "sku": "HF-SKU-0039",
+          "name": "Kirkby Coffee Table, Black",
+          "qty": 2,
+          "unit_price_gbp": 200.99
+        }
+      ],
+      "shipping_address": "89 Mill Lane, Sheffield, S11 8TY",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-26T17:46:46Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T17:46:46Z"
+    },
+    {
+      "id": "HF-279180",
+      "customer_id": 37,
+      "customer_email": "daniel.robinson@example.co.uk",
+      "status": "processing",
+      "total_gbp": 30.99,
+      "items": [
+        {
+          "sku": "HF-SKU-0100",
+          "name": "Bamboo Bath Caddy, White",
+          "qty": 1,
+          "unit_price_gbp": 30.99
+        }
+      ],
+      "shipping_address": "80 Mill Lane, Belfast, BT9 5EP",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-26T21:08:00Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T21:08:00Z"
+    },
+    {
+      "id": "HF-252598",
+      "customer_id": 35,
+      "customer_email": "arjun.murray@example.co.uk",
+      "status": "processing",
+      "total_gbp": 268.93,
+      "items": [
+        {
+          "sku": "HF-SKU-0163",
+          "name": "Waterproof Mattress Protector, Single",
+          "qty": 1,
+          "unit_price_gbp": 18.95
+        },
+        {
+          "sku": "HF-SKU-0056",
+          "name": "Rechargeable LED Lantern, Matt Black",
+          "qty": 1,
+          "unit_price_gbp": 34.99
+        },
+        {
+          "sku": "HF-SKU-0159",
+          "name": "Rolled Foam Mattress, King",
+          "qty": 1,
+          "unit_price_gbp": 214.99
+        }
+      ],
+      "shipping_address": "19 Oak Close, Edinburgh, EH9 1LT",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-26T21:17:59Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-26T21:17:59Z"
+    },
+    {
+      "id": "HF-243312",
+      "customer_id": 21,
+      "customer_email": "oliver.morgan@example.co.uk",
+      "status": "processing",
+      "total_gbp": 126.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0164",
+          "name": "Waterproof Mattress Protector, Double",
+          "qty": 1,
+          "unit_price_gbp": 24.99
+        },
+        {
+          "sku": "HF-SKU-0113",
+          "name": "Washable Runner, 70 x 200cm, Terracotta",
+          "qty": 1,
+          "unit_price_gbp": 60.99
+        },
+        {
+          "sku": "HF-SKU-0079",
+          "name": "Electric Kettle, 1.7L, Cream",
+          "qty": 1,
+          "unit_price_gbp": 40.99
+        }
+      ],
+      "shipping_address": "38 The Green, Cardiff, CF24 4HQ",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-27T02:11:15Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-27T02:11:15Z"
+    },
+    {
+      "id": "HF-257907",
+      "customer_id": 17,
+      "customer_email": "aisha.harris@example.co.uk",
+      "status": "processing",
+      "total_gbp": 1052.97,
+      "items": [
+        {
+          "sku": "HF-SKU-0055",
+          "name": "Rechargeable LED Lantern, Brass",
+          "qty": 1,
+          "unit_price_gbp": 34.99
+        },
+        {
+          "sku": "HF-SKU-0029",
+          "name": "Linton 3 Seater Sofa, Walnut",
+          "qty": 1,
+          "unit_price_gbp": 898.99
+        },
+        {
+          "sku": "HF-SKU-0120",
+          "name": "Round Wool Rug, 150cm, Navy",
+          "qty": 1,
+          "unit_price_gbp": 118.99
+        }
+      ],
+      "shipping_address": "37 Church Street, York, YO10 3DD",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-27T04:51:32Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-27T04:51:32Z"
+    },
+    {
+      "id": "HF-258843",
+      "customer_id": 39,
+      "customer_email": "samuel.khan@example.co.uk",
+      "status": "processing",
+      "total_gbp": 735.96,
+      "items": [
+        {
+          "sku": "HF-SKU-0022",
+          "name": "Holt Dining Table, 6 Seater, Natural Oak",
+          "qty": 1,
+          "unit_price_gbp": 648.99
+        },
+        {
+          "sku": "HF-SKU-0132",
+          "name": "Scented Candle, Fig & Cedar, Ink",
+          "qty": 2,
+          "unit_price_gbp": 19.99
+        },
+        {
+          "sku": "HF-SKU-0125",
+          "name": "Faux Sheepskin Rug, Terracotta",
+          "qty": 1,
+          "unit_price_gbp": 46.99
+        }
+      ],
+      "shipping_address": "22 Victoria Road, Brighton, BN1 6HT",
+      "carrier": "DPD",
+      "tracking": null,
+      "created_at": "2026-11-27T04:52:33Z",
+      "delivered_at": null,
+      "updated_at": "2026-11-27T04:52:33Z"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Returns & Refunds Policy",
+    "type": "pdf",
+    "path": "corpus/pdf/returns-refunds.pdf"
+  },
+  {
+    "title": "Delivery & Shipping Policy",
+    "type": "pdf",
+    "path": "corpus/pdf/delivery-shipping.pdf"
+  },
+  {
+    "title": "Warranty & Faulty Goods Policy",
+    "type": "pdf",
+    "path": "corpus/pdf/warranty-faulty-goods.pdf"
+  },
+  {
+    "title": "Terms & Conditions of Sale",
+    "type": "pdf",
+    "path": "corpus/pdf/terms-conditions.pdf"
+  },
+  {
+    "title": "Privacy Notice",
+    "type": "pdf",
+    "path": "corpus/pdf/privacy-notice.pdf"
+  },
+  {
+    "title": "Bedding & Mattress Size Guide",
+    "type": "pdf",
+    "path": "corpus/pdf/size-guide.pdf"
+  },
+  {
+    "title": "Payments, Klarna, Gift Cards & Vouchers",
+    "type": "pdf",
+    "path": "corpus/pdf/payments-gift-cards.pdf"
+  },
+  {
+    "title": "Hearth Rewards & Discounts",
+    "type": "pdf",
+    "path": "corpus/pdf/rewards-discounts.pdf"
+  },
+  {
+    "title": "Furniture Care & Assembly Guide",
+    "type": "pdf",
+    "path": "corpus/pdf/care-assembly.pdf"
+  },
+  {
+    "title": "Sustainability & Recycling",
+    "type": "pdf",
+    "path": "corpus/pdf/sustainability-recycling.pdf"
+  },
+  {
+    "title": "Frequently Asked Questions",
+    "type": "web",
+    "path": "corpus/site/faqs.html"
+  },
+  {
+    "title": "Tracking Your Order",
+    "type": "web",
+    "path": "corpus/site/tracking.html"
+  },
+  {
+    "title": "Cancelling an Order",
+    "type": "web",
+    "path": "corpus/site/cancelling.html"
+  },
+  {
+    "title": "Changing Your Delivery Address",
+    "type": "web",
+    "path": "corpus/site/change-address.html"
+  },
+  {
+    "title": "Damaged or Missing Items",
+    "type": "web",
+    "path": "corpus/site/damaged-missing.html"
+  },
+  {
+    "title": "Contact Us",
+    "type": "web",
+    "path": "corpus/site/contact.html"
+  },
+  {
+    "title": "Using the Returns Portal",
+    "type": "web",
+    "path": "corpus/site/returns-portal.html"
+  },
+  {
+    "title": "Our Price Promise",
+    "type": "web",
+    "path": "corpus/site/price-promise.html"
+  },
+  {
+    "title": "Gift Cards",
+    "type": "web",
+    "path": "corpus/site/gift-cards.html"
+  },
+  {
+    "title": "Business & Trade Accounts",
+    "type": "web",
+    "path": "corpus/site/trade.html"
+  },
+  {
+    "title": "About Hearth & Field",
+    "type": "web",
+    "path": "corpus/site/about.html"
+  },
+  {
+    "title": "Delivery Areas",
+    "type": "web",
+    "path": "corpus/site/delivery-areas.html"
+  },
+  {
+    "title": "Help Centre",
+    "type": "web",
+    "path": "corpus/site/index.html"
+  },
+  {
+    "title": "Product Catalogue",
+    "type": "csv",
+    "path": "corpus/products.csv"
+  }
+]
