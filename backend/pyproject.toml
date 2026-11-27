@@ -5,7 +5,7 @@ requires-python = ">=3.12"
 dependencies = [
   "fastapi==0.115.6",
   "uvicorn[standard]==0.32.1",
-  "pydantic==2.10.4",
+  "pydantic[email]==2.10.4",
   "pydantic-settings==2.7.0",
   "sqlalchemy==2.0.36",
   "psycopg[binary,pool]==3.2.3",
@@ -17,7 +17,6 @@ dependencies = [
   "bcrypt==4.2.1",
   "langgraph==0.2.60",
   "langgraph-checkpoint-postgres==2.0.9",
-  "fastembed==0.4.2",
   "pypdf==5.1.0",
   "beautifulsoup4==4.12.3",
   "apscheduler==3.11.0",
@@ -25,6 +24,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+local = ["fastembed==0.4.2"]
 router = ["llama-cpp-python==0.3.5"]
 dev = ["pytest==8.3.4", "pytest-asyncio==0.25.0", "ruff==0.8.4", "mypy==1.14.0", "testcontainers[postgres]==4.9.0"]
 

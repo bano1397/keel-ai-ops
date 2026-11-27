@@ -1,0 +1,10 @@
+.venv
+frontend
+finetune
+models
+deploy
+automation
+docs
+**/__pycache__
+**/node_modules
+evals/reports

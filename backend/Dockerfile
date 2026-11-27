@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl libgomp1 &
 COPY backend/pyproject.toml backend/pyproject.toml
 COPY backend/keel/__init__.py backend/keel/__init__.py
 ARG WITH_ROUTER=1
-RUN pip install -e ./backend
+RUN pip install -e "./backend[local]"
 RUN if [ "$WITH_ROUTER" = "1" ]; then \
       apt-get update && apt-get install -y --no-install-recommends build-essential cmake && \
       CMAKE_ARGS="-DGGML_NATIVE=OFF -DGGML_BLAS=OFF" pip install "llama-cpp-python==0.3.5" && \

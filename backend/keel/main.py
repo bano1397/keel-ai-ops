@@ -54,6 +54,9 @@ async def lifespan(_: FastAPI):
     from keel.rag.models import warm
     from keel.seed import seed
 
+    if settings().serverless:
+        yield
+        return
     if seed():
         from keel.rag.ingest import ingest
 
@@ -110,6 +113,51 @@ async def unhandled(request: Request, exc: Exception) -> JSONResponse:
     log.exception("unhandled error on %s", request.url.path)
     alert_error(f"api:{request.url.path}", repr(exc))
     return JSONResponse({"detail": "Internal error"}, status_code=500)
+
+
+INLINE_DRAIN_SKIP = ("/api/chat/stream", "/api/cron/", "/webhooks/")
+
+
+@app.middleware("http")
+async def serverless_drain(request: Request, call_next: Any) -> Any:
+    response = await call_next(request)
+    if (
+        settings().serverless
+        and request.method == "POST"
+        and not request.url.path.startswith(INLINE_DRAIN_SKIP)
+        and response.status_code < 400
+    ):
+        await asyncio.to_thread(after_request, 8.0)
+    return response
+
+
+def after_request(budget: float = 8.0) -> None:
+    if settings().serverless:
+        try:
+            jobq.drain(budget)
+        except Exception as e:
+            log.warning("inline drain failed: %r", e)
+
+
+@app.api_route("/api/cron/tick", methods=["GET", "POST"])
+def cron_tick(request: Request) -> dict:
+    secret = settings().cron_secret
+    given = request.headers.get("authorization", "").removeprefix("Bearer ").strip()
+    if not secret or not hmac.compare_digest(given, secret):
+        raise HTTPException(401, "bad cron secret")
+    recovered = jobq.recover_stuck(minutes=3)
+    drained = jobq.drain(40.0)
+    t = now()
+    key = t.strftime("%Y-%m-%d")
+    report = None
+    if t.hour >= settings().report_hour_utc and kv_get("report_sent_for") != key:
+        from keel.db import kv_set
+
+        kv_set("report_sent_for", key)
+        report = reports.send_daily_report(key)["emailed_to"] or "slack"
+        drained_after = jobq.drain(10.0)
+        drained = {k: drained[k] + drained_after[k] for k in drained}
+    return {"ok": True, "recovered": recovered, "drained": drained, "report": report}
 
 
 @app.get("/health")
@@ -215,6 +263,7 @@ async def chat_stream(body: ChatIn) -> StreamingResponse:
                     )
                 },
             )
+            await asyncio.to_thread(after_request)
             return
 
     return StreamingResponse(gen(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
@@ -354,7 +403,8 @@ async def live(request: Request, after: int = 0, user: dict = Depends(auth.curre
         with session() as db:
             last = after or (db.scalar(select(func.max(Message.id))) or 0)
             last_ticket = db.scalar(select(func.max(Ticket.id))) or 0
-        while not await request.is_disconnected():
+        started = time.monotonic()
+        while not await request.is_disconnected() and time.monotonic() - started < 240:
             with session() as db:
                 for m in db.scalars(select(Message).where(Message.id > last).order_by(Message.id)):
                     last = m.id
@@ -975,6 +1025,7 @@ async def telegram_webhook(secret: str, request: Request) -> dict:
     jobq.receive(
         "telegram", f"tg:{upd['update_id']}", chat_id, {"text": text, "name": msg.get("from", {}).get("first_name")}
     )
+    await asyncio.to_thread(after_request, 50.0)
     return {"ok": True}
 
 
@@ -1024,6 +1075,7 @@ async def email_webhook(request: Request) -> dict:
         sender.lower(),
         {"text": text[:4000], "subject": data.get("subject")},
     )
+    await asyncio.to_thread(after_request, 50.0)
     return {"ok": True}
 
 

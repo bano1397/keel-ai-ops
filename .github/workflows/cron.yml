@@ -1,0 +1,17 @@
+name: Keel scheduler
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Drain retry queues, deliver outbox, send daily report when due
+        run: |
+          curl -fsS --retry 3 --retry-delay 10 --max-time 120 \
+            -H "Authorization: Bearer ${{ secrets.KEEL_CRON_SECRET }}" \
+            "${{ secrets.KEEL_API_URL }}/api/cron/tick"

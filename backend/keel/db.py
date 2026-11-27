@@ -160,7 +160,7 @@ class Feedback(Base):
     reason: Mapped[str | None] = mapped_column(Text)
     context: Mapped[Any] = mapped_column(JSONType, default=dict)
     reviewer: Mapped[str] = mapped_column(String(200))
-    embedding = mapped_column(Vector(384), nullable=True)
+    embedding = mapped_column(Vector(settings().embed_dim), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
 
 
@@ -230,7 +230,7 @@ class Chunk(Base):
     section: Mapped[str | None] = mapped_column(String(200))
     page: Mapped[int | None] = mapped_column(Integer)
     text: Mapped[str] = mapped_column(Text)
-    embedding = mapped_column(Vector(384))
+    embedding = mapped_column(Vector(settings().embed_dim))
     tsv = mapped_column(TSVECTOR)
 
 
@@ -240,7 +240,16 @@ class KV(Base):
     v: Mapped[Any] = mapped_column(JSONType)
 
 
-engine = create_engine(settings().database_url, pool_pre_ping=True, pool_size=10, max_overflow=10)
+def _engine() -> Any:
+    s = settings()
+    if s.serverless:
+        from sqlalchemy.pool import NullPool
+
+        return create_engine(s.database_url, poolclass=NullPool, connect_args={"prepare_threshold": None})
+    return create_engine(s.database_url, pool_pre_ping=True, pool_size=10, max_overflow=10)
+
+
+engine = _engine()
 SessionLocal = sessionmaker(engine, expire_on_commit=False)
 
 

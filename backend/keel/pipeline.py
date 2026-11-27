@@ -20,7 +20,14 @@ def graph() -> Any:
         from psycopg_pool import ConnectionPool
 
         url = settings().database_url.replace("postgresql+psycopg://", "postgresql://")
-        pool = ConnectionPool(url, max_size=5, kwargs={"autocommit": True, "prepare_threshold": 0}, open=True)
+        small = settings().serverless
+        pool = ConnectionPool(
+            url,
+            min_size=1 if small else 4,
+            max_size=2 if small else 5,
+            kwargs={"autocommit": True, "prepare_threshold": None if small else 0},
+            open=True,
+        )
         saver = PostgresSaver(cast(Any, pool))
         saver.setup()
         return build_graph(saver)

@@ -84,7 +84,7 @@ Open http://localhost:3000 (dashboard) and http://localhost:3000/chat (customer 
 **Developer setup** (hot reload):
 
 ```bash
-uv venv --python 3.12 .venv && uv pip install --python .venv -e "./backend[dev]"
+uv venv --python 3.12 .venv && uv pip install --python .venv -e "./backend[dev,local]"
 ```
 
 ```bash

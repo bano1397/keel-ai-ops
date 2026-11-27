@@ -77,7 +77,16 @@ def router_node(state: State) -> State:
     prof = state.get("profile") or {}
     if r["route"] != "escalation" and prof.get("past_escalations", 0) >= 2 and r["signals"]["anger"]:
         r.update(route="escalation", label="complaint", reason=r["reason"] + "; repeat complainant in history")
-    if r["route"] == "orders" and not _mentions_specific_order(state):
+    calm_question = re.search(
+        r"\?\s*$|\bwhat (do|should|can) i\b|\bwhat are my rights\b|\bhow do i\b", state["message"], re.I
+    )
+    if r["label"] == "complaint" and r["model"] != "rules" and not any(r["signals"].values()) and calm_question:
+        r.update(
+            route="support",
+            label="policy_question",
+            reason=r["reason"] + "; calm how-to question with no anger or risk signals, answered from policy",
+        )
+    if r["label"] in ("refund_request", "cancel_order", "change_address") and not _mentions_specific_order(state):
         r.update(
             route="support",
             label="policy_question",

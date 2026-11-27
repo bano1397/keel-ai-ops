@@ -133,3 +133,14 @@ def worker(stop: threading.Event, which: str) -> None:
             log.exception("worker loop error")
             alert_error(f"worker:{which}", repr(e))
             stop.wait(3.0)
+
+
+def drain(max_seconds: float = 20.0) -> dict:
+    import time
+
+    t0 = time.monotonic()
+    done = {"inbox": 0, "outbox": 0}
+    for which, fn in (("inbox", process_inbox_once), ("outbox", process_outbox_once)):
+        while time.monotonic() - t0 < max_seconds and fn():
+            done[which] += 1
+    return done

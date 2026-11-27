@@ -1,6 +1,7 @@
 import { mockRequest } from "@/mocks/handler";
 
-export const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000").replace(/\/$/, "");
+const RAW_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+export const API_URL = RAW_API_URL === "same-origin" ? "" : RAW_API_URL.replace(/\/$/, "");
 export const MOCK = process.env.NEXT_PUBLIC_MOCK === "1";
 
 const TOKEN_KEY = "keel.token";

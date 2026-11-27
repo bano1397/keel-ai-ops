@@ -28,6 +28,11 @@ class Settings(BaseSettings):
     router_gguf_path: str = ""
     router_min_confidence: float = 0.6
 
+    embed_provider: str = "local"
+    embed_dim: int = 384
+    rerank_provider: str = "local"
+    serverless: bool = False
+    cron_secret: str = ""
     embed_model: str = "BAAI/bge-small-en-v1.5"
     rerank_model: str = "Xenova/ms-marco-MiniLM-L-6-v2"
     rag_min_rerank: float = 0.0
