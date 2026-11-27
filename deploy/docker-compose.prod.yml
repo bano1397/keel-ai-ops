@@ -1,0 +1,50 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: keel
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+      POSTGRES_DB: keel
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U keel"]
+      interval: 5s
+      retries: 10
+    restart: always
+
+  backup:
+    image: pgvector/pgvector:pg16
+    environment:
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+    volumes: ["./backups:/backups"]
+    entrypoint: ["sh", "-c", "while true; do pg_dump -h db -U keel keel | gzip > /backups/keel-$$(date +%u).sql.gz; sleep 86400; done"]
+    depends_on: { db: { condition: service_healthy } }
+    restart: always
+
+  api:
+    image: keel-api
+    build: { context: .., dockerfile: backend/Dockerfile }
+    env_file: ../.env
+    environment:
+      DATABASE_URL: postgresql+psycopg://keel:${POSTGRES_PASSWORD}@db:5432/keel
+      ROUTER_GGUF_PATH: ${ROUTER_GGUF_PATH:-}
+    volumes: ["../models:/app/models:ro"]
+    expose: ["8000"]
+    depends_on: { db: { condition: service_healthy } }
+    restart: always
+    mem_limit: 6g
+
+  caddy:
+    image: caddy:2.8
+    ports: ["80:80", "443:443"]
+    environment:
+      KEEL_HOST: ${KEEL_HOST}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on: [api]
+    restart: always
+
+volumes:
+  caddy_data:
+  pgdata:

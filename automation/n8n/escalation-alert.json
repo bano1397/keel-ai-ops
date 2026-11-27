@@ -1,0 +1,88 @@
+{
+  "name": "Keel \u00b7 Escalation alert relay",
+  "nodes": [
+    {
+      "id": "018736af-a5b7-575a-90e7-33bfc459d43d",
+      "name": "Webhook: escalation",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "keel-escalation",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "webhookId": "keel-escalation"
+    },
+    {
+      "id": "ed60208c-61e2-5ca3-b431-ea34f47aa8d7",
+      "name": "Verify signature",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const crypto = require('crypto');\nconst h = $input.first().json.headers['x-keel-signature'] || '';\nconst parts = Object.fromEntries(h.split(',').map(p => p.split('=')));\nconst body = JSON.stringify($input.first().json.body);\nconst expected = crypto.createHmac('sha256', $env.KEEL_N8N_HMAC_SECRET).update(parts.t + '.' + body).digest('hex');\nif (Math.abs(Date.now() / 1000 - Number(parts.t)) > 300 || expected !== parts.v1) throw new Error('bad signature');\nreturn [{ json: $input.first().json.body }];"
+      }
+    },
+    {
+      "id": "b9098cf5-44b4-59c5-bf27-9f7ec0cc19df",
+      "name": "Slack: #escalations",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.KEEL_SLACK_WEBHOOK}}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ text: $json.text }) }}",
+        "options": {}
+      },
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 3000
+    }
+  ],
+  "connections": {
+    "Webhook: escalation": {
+      "main": [
+        [
+          {
+            "node": "Verify signature",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify signature": {
+      "main": [
+        [
+          {
+            "node": "Slack: #escalations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "errorWorkflow": "keel-error-handler"
+  },
+  "active": false,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

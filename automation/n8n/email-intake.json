@@ -1,0 +1,134 @@
+{
+  "name": "Keel \u00b7 Email intake \u2192 AI inbox",
+  "nodes": [
+    {
+      "id": "0976ccc9-1e0d-5c87-8734-da8b1540220d",
+      "name": "IMAP: new support email",
+      "type": "n8n-nodes-base.emailReadImap",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "mailbox": "INBOX",
+        "postProcessAction": "read",
+        "options": {
+          "customEmailConfig": "[\"UNSEEN\"]"
+        }
+      },
+      "credentials": {
+        "imap": {
+          "id": "",
+          "name": "Support mailbox"
+        }
+      }
+    },
+    {
+      "id": "3ad38c9d-75c0-563a-b1a3-40b7a6fe860c",
+      "name": "Build payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "jsCode": "return $input.all().map(i => ({ json: { payload: { action: 'inbound_message', channel: 'email', external_id: i.json.messageId || i.json.metadata?.['message-id'], sender: (i.json.from?.value?.[0]?.address || i.json.from || '').toLowerCase(), subject: i.json.subject, text: (i.json.text || '').split('\\nOn ')[0].trim().slice(0, 4000) } } }));"
+      }
+    },
+    {
+      "id": "64203993-0b87-5795-a8c9-26335f60eecd",
+      "name": "Sign (HMAC-SHA256)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const crypto = require('crypto');\nconst secret = $env.KEEL_N8N_HMAC_SECRET;\nconst ts = Math.floor(Date.now() / 1000).toString();\nreturn $input.all().map(item => {\n  const body = JSON.stringify(item.json.payload);\n  const sig = crypto.createHmac('sha256', secret).update(ts + '.' + body).digest('hex');\n  return { json: { body, signature: `t=${ts},v1=${sig}` } };\n});"
+      }
+    },
+    {
+      "id": "892177ea-9b34-5aa2-b8ee-202dfa349451",
+      "name": "POST /webhooks/n8n",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.KEEL_API_URL}}/webhooks/n8n",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-keel-signature",
+              "value": "={{$json.signature}}"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{$json.body}}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000
+    }
+  ],
+  "connections": {
+    "IMAP: new support email": {
+      "main": [
+        [
+          {
+            "node": "Build payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build payload": {
+      "main": [
+        [
+          {
+            "node": "Sign (HMAC-SHA256)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sign (HMAC-SHA256)": {
+      "main": [
+        [
+          {
+            "node": "POST /webhooks/n8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "errorWorkflow": "keel-error-handler"
+  },
+  "active": false,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}
