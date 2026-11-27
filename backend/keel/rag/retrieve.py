@@ -66,9 +66,27 @@ def vector_search(q: str, limit: int = 30) -> list[Hit]:
         return [_row(r) for r in s.execute(sql, {"v": str(vec), "n": limit})]
 
 
+EXPANSIONS = {
+    "match": "price promise",
+    "cheaper": "price promise",
+    "assemble": "assembly",
+    "build": "assembly",
+    "money back": "refund",
+    "smashed": "damaged",
+    "chipped": "damaged",
+    "cracked": "damaged",
+}
+
+
+def expand(q: str) -> str:
+    low = q.lower()
+    extra = [v for k, v in EXPANSIONS.items() if k in low]
+    return q + (" " + " ".join(extra) if extra else "")
+
+
 def hybrid_search(q: str, k: int | None = None, candidates: int = 15) -> dict:
     k = k or settings().rag_top_k
-    kw = keyword_search(q)
+    kw = keyword_search(expand(q))
     vec = vector_search(q)
     fused: dict[int, Hit] = {}
     for rank, h in enumerate(kw):

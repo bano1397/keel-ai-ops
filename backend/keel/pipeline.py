@@ -29,6 +29,10 @@ def graph() -> Any:
         return build_graph()
 
 
+def tidy(text: str) -> str:
+    return text.replace("\u2011", "-").replace("\u2010", "-").replace("\u00a0", " ").replace("\u202f", " ").strip()
+
+
 def channel_text(reply: str, sources: list[dict], channel: str) -> str:
     if channel == "web" or not sources:
         return reply
@@ -84,6 +88,7 @@ def handle(
     finally:
         emitter.reset(token)
 
+    out["reply"] = tidy(out["reply"])
     latency = int((time.perf_counter() - t0) * 1000)
     usage = out.get("usage") or {}
     status = "sent" if out.get("confidence", 0) >= settings().auto_send_confidence else "pending_review"

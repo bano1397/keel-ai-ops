@@ -44,7 +44,7 @@ LLM_GUIDE = (
     "up or change one of THEIR existing orders (usually an order number or 'my order'). policy_question means how "
     "delivery, returns, refunds, payments, warranty, discounts or the company work in general, including hypotheticals "
     "like 'if I order on Wednesday when will it arrive'. product_question means price, stock, size or details of a "
-    "product we sell. complaint means upset or angry. human_request means they ask for a person. legal_safety means a "
+    "product we sell. complaint means the customer is upset or angry with us (a calm report of a damaged item that asks what to do is a policy_question). human_request means they ask for a person. legal_safety means a "
     "legal threat, chargeback, fraud, injury or safety issue. other means anything unrelated to the shop."
 )
 
