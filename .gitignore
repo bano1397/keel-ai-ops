@@ -17,3 +17,4 @@ models/*.gguf
 *.db
 .DS_Store
 finetune/data/
+deploy/*.env

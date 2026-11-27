@@ -23,6 +23,16 @@ def _embedder() -> Any:
     return TextEmbedding(settings().embed_model)
 
 
+STATIC_MODEL_DIR = __import__("pathlib").Path(__file__).resolve().parent.parent / "assets" / "potion-base-8M"
+
+
+@lru_cache
+def _static() -> Any:
+    from model2vec import StaticModel
+
+    return StaticModel.from_pretrained(str(STATIC_MODEL_DIR))
+
+
 @lru_cache
 def _reranker() -> Any:
     from fastembed.rerank.cross_encoder import TextCrossEncoder
@@ -61,6 +71,8 @@ def _gemini(texts: list[str], task: str) -> list[list[float]]:
 def embed_passages(texts: list[str]) -> list[list[float]]:
     if not texts:
         return []
+    if settings().embed_provider == "static":
+        return [_normalise(v.tolist()) for v in _static().encode(texts)]
     if settings().embed_provider == "gemini":
         out: list[list[float]] = []
         for i in range(0, len(texts), 20):
@@ -74,6 +86,8 @@ def embed_passages(texts: list[str]) -> list[list[float]]:
 
 @lru_cache(maxsize=512)
 def _query_cached(text: str) -> tuple[float, ...]:
+    if settings().embed_provider == "static":
+        return tuple(_normalise(_static().encode([text])[0].tolist()))
     if settings().embed_provider == "gemini":
         return tuple(_gemini([text], "RETRIEVAL_QUERY")[0])
     with _lock:
