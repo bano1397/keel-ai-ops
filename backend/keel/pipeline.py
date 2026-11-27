@@ -15,6 +15,8 @@ log = logging.getLogger("keel.pipeline")
 
 @lru_cache
 def graph() -> Any:
+    if settings().serverless:
+        return build_graph()
     try:
         from langgraph.checkpoint.postgres import PostgresSaver
         from psycopg_pool import ConnectionPool

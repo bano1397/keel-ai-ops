@@ -243,9 +243,14 @@ class KV(Base):
 def _engine() -> Any:
     s = settings()
     if s.serverless:
-        from sqlalchemy.pool import NullPool
-
-        return create_engine(s.database_url, poolclass=NullPool, connect_args={"prepare_threshold": None})
+        return create_engine(
+            s.database_url,
+            pool_size=3,
+            max_overflow=2,
+            pool_pre_ping=True,
+            pool_recycle=240,
+            connect_args={"prepare_threshold": None},
+        )
     return create_engine(s.database_url, pool_pre_ping=True, pool_size=10, max_overflow=10)
 
 

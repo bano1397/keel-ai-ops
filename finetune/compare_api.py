@@ -71,7 +71,7 @@ def main() -> None:
                 time.sleep(5)
                 continue
             if resp.status_code == 429:
-                time.sleep(float(resp.headers.get("retry-after", "3")))
+                time.sleep(min(20.0, float(resp.headers.get("retry-after", "3"))))
                 continue
             resp.raise_for_status()
             break
@@ -80,6 +80,8 @@ def main() -> None:
         tin += data["usage"]["prompt_tokens"]
         tout += data["usage"]["completion_tokens"]
         preds.append(parse(data["choices"][0]["message"]["content"] or ""))
+        if len(preds) % 20 == 0:
+            print(f"{len(preds)}/{len(rows)}", flush=True)
     gold = [r["label"] for r in rows]
     acc = sum(g == p for g, p in zip(gold, preds, strict=True)) / len(gold)
     f1s = []

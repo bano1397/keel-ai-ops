@@ -30,13 +30,13 @@ Every inbound message (web chat, Telegram, email, or n8n) is **stored first** in
 
 ## 3. Fine-tuning results
 
-_Filled from `finetune/RESULTS.md` after the Colab run (232-message held-out test set, 10 labels)._
+Task: 10-label intent and risk classification (the Router). Data: 2,205 train, 244 validation and 232 held-out test messages, from Bitext (CDLA-Sharing-1.0) mapped to our labels plus UK synthetic messages. The test templates are never seen in training; see `finetune/DATASET_CARD.md`. Training: QLoRA r=16, 2 epochs, **5.3 minutes on a free Colab T4**. Every row below is scored on the identical test file (SHA-256 `babd1576…`).
 
 | Model | Accuracy | Macro-F1 | Route accuracy | Escalation recall | p50 | p95 | $ / 1k msgs |
 |---|---|---|---|---|---|---|---|
-| Qwen2.5-1.5B base, zero-shot | | | | | | | |
-| Qwen2.5-1.5B base, 10-shot | | | | | | | |
-| Qwen2.5-1.5B + LoRA (ours) | | | | | | | |
+| Qwen2.5-1.5B base, zero-shot | 66.8% | 60.8% | 83.6% | 85.0% | 126 ms | 174 ms | $0.0147 |
+| Qwen2.5-1.5B base, 10-shot | 72.0% | 69.0% | 88.8% | 88.3% | 141 ms | 204 ms | $0.0145 |
+| **Qwen2.5-1.5B + LoRA (ours)** | **96.6%** | **96.3%** | **99.6%** | **100%** | 259 ms | 357 ms | $0.026 |
 | gpt-oss-120b (Groq API) | | | | | | | |
 
 **When to use what**
@@ -53,13 +53,28 @@ _Filled from `finetune/RESULTS.md` after the Colab run (232-message held-out tes
 
 | Run | Mode | Score | Routing | Tools | Safety | Citation | Refusal | Escalation | Groundedness |
 |---|---|---|---|---|---|---|---|---|---|
-| Offline rules (no LLM) | rules | | | | | | | | — |
-| Groq LLM, before feedback | groq | | | | | | | | |
-| Groq LLM, after feedback batch | groq | | | | | | | | |
+| Offline rules only (no LLM) | rules | 70% | 97% | 93% | 100% | 70% | 79% | 100% | — |
+| Groq gpt-oss, first run | local embeddings + cross-encoder | 90% | 96% | 93% | 100% | 86% | 96% | 100% | 100% |
+| Groq gpt-oss, after routing fixes | local embeddings + cross-encoder | 95% | 97% | 97% | 100% | 93% | 98% | 100% | 98% |
+| **Deployed config** (serverless, static embeddings, LLM rerank) | groq | **96%** | **100%** | **100%** | **100%** | **100%** | **100%** | **100%** | 95% |
+
+All four runs use the same 100 cases on a freshly seeded database (`evals/reports/`). Between run 2 and run 3 I fixed real bugs the eval exposed:
+- general refund and return questions were going to the Orders agent, which answered from memory instead of the policy documents;
+- refunds over £50 were turned into tickets instead of calling the refund tool;
+- a typographic-hyphen mismatch.
+
+That tuning happened on the eval set itself, so I report every run rather than only the best. The 4 remaining failures are:
+- 2 groundedness-judge disagreements;
+- 1 missing keyword ("Australia");
+- 1 wrong-owner case where the agent asks for an address instead of refusing outright. It still can't change the order, because ownership is enforced in the tool.
+
+The *cited the exact expected document* rate is 95.3%. When it misses, another document states the same fact.
+
+Prices for the costs below are from Groq's model pages (gpt-oss-120b $0.15/$0.60, gpt-oss-20b $0.075/$0.30 per million tokens). Small-model cost assumes a $0.35/h T4.
 
 ## 5. Cost per conversation
 
-_From the `traces` table of the eval run and the live demo._
+Measured over the 100-case eval in the deployed configuration: **74,421 tokens, $0.0125 in total, about $0.000125 per message** (about $0.13 per 1,000 messages) on Groq pricing. The free tier covers this at demo volume. Every live request stores tokens, cost and latency in `traces`, and the Analytics page charts them.
 
 ## 6. What breaks at scale, and how I'd fix it
 
