@@ -6,9 +6,9 @@ Demo tenant: **Hearth & Field**, a UK homeware retailer (prices in £, Royal Mai
 
 | | |
 |---|---|
-| Live demo | _added after deployment_ |
-| Customer chat (public) | `<live>/chat` |
-| Dashboard | `<live>` · admin `admin@keel.demo` / `KeelAdmin!2026` · agent `agent@keel.demo` / `KeelAgent!2026` (test accounts) |
+| Live demo | **https://keel-ai-ops-x92d.vercel.app** (dashboard + chat) · API health: https://keel-ai-ops.vercel.app/health |
+| Customer chat (public) | https://keel-ai-ops-x92d.vercel.app/chat |
+| Dashboard | https://keel-ai-ops-x92d.vercel.app/login · admin `admin@keel.demo` / `KeelAdmin!2026` · agent `agent@keel.demo` / `KeelAgent!2026` (test accounts) |
 | Demo video | _link_ |
 | Requirements checklist | [docs/REQUIREMENTS.md](docs/REQUIREMENTS.md) |
 | Write-up | [docs/WRITEUP.md](docs/WRITEUP.md) |
@@ -66,6 +66,18 @@ flowchart LR
 | Evals | 100 cases, `make eval`, per-category scores, Markdown + JSON reports, history on dashboard, CI subset | `evals/` |
 | Cost & latency | Tokens, $ cost and latency per request in `traces` | `pipeline.py` |
 | Deployment | Dockerfiles + compose; secrets only in env; gitleaks in CI and pre-commit | `docker-compose.yml`, `.github/` |
+
+## Hosting (free tiers, no card)
+
+| Piece | Where | Notes |
+|---|---|---|
+| Dashboard + public chat | Vercel Hobby (`frontend/`) | Proxies `/api/*`, `/webhooks/*`, `/help/*` to the API, so one origin serves everything |
+| API (FastAPI + LangGraph) | Vercel Python function (`api/index.py`) | `SERVERLESS=1`: messages are processed inline; failures stay in the Postgres queue and are retried |
+| Postgres + pgvector | Neon Free | Data, vectors, full-text index, queue, LangGraph checkpoints |
+| Scheduler | GitHub Actions (`.github/workflows/cron.yml`) | Calls `/api/cron/tick`: retries, outbox delivery, daily report |
+| Embeddings | Bundled static model (`minishlab/potion-base-8M`, MIT) | No API quota; same model at index and query time |
+
+The Docker Compose path (`make up`) runs the same app with local bge-small embeddings, a cross-encoder reranker, background workers and the fine-tuned GGUF router.
 
 ## Quick start (local)
 
