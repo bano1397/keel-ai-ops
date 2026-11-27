@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: keel
+          POSTGRES_PASSWORD: keel
+          POSTGRES_DB: keel
+        ports: ["5433:5432"]
+        options: >-
+          --health-cmd "pg_isready -U keel" --health-interval 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql+psycopg://keel:keel@localhost:5433/keel
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+      - run: uv venv --python 3.12 .venv && uv pip install --python .venv -e "./backend[dev]"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/fastembed
+          key: fastembed-bge-small-minilm-v1
+      - name: Lint and type-check
+        run: .venv/bin/ruff check . && .venv/bin/ruff format --check . && (cd backend && ../.venv/bin/mypy keel)
+      - name: Unit and integration tests (LLM mocked)
+        run: cd backend && ../.venv/bin/python -m pytest -q
+      - name: Eval subset (offline rules, no API keys in CI)
+        run: .venv/bin/python -m evals.run --subset 20 --label ci
+        env:
+          LLM_OFFLINE: "1"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-report
+          path: evals/reports/latest.md
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: frontend/package-lock.json }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: http://localhost:8000
+
+  e2e:
+    runs-on: ubuntu-latest
+    needs: [backend, frontend]
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: keel
+          POSTGRES_PASSWORD: keel
+          POSTGRES_DB: keel
+        ports: ["5433:5432"]
+        options: >-
+          --health-cmd "pg_isready -U keel" --health-interval 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql+psycopg://keel:keel@localhost:5433/keel
+      LLM_OFFLINE: "1"
+      FRONTEND_URL: http://localhost:3300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+      - run: uv venv --python 3.12 .venv && uv pip install --python .venv -e "./backend"
+      - run: cd backend && nohup ../.venv/bin/uvicorn keel.main:app --port 8100 > api.log 2>&1 &
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: frontend/package-lock.json }
+      - run: cd frontend && npm ci && npx playwright install --with-deps chromium
+      - run: for i in $(seq 1 60); do curl -fs localhost:8100/health && break; sleep 3; done
+      - run: cd frontend && npx playwright test
+        env:
+          E2E_BASE_URL: http://localhost:3300
+          E2E_API_URL: http://localhost:8100
+          NEXT_PUBLIC_API_URL: http://localhost:8100
