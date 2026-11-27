@@ -24,6 +24,10 @@ class LLMUnavailable(Exception):
     pass
 
 
+class QuotaExceeded(Exception):
+    pass
+
+
 class RetryableHTTP(Exception):
     def __init__(self, status: int, retry_after: float | None):
         super().__init__(f"HTTP {status}")
@@ -62,6 +66,12 @@ def providers() -> list[Provider]:
     out = []
     if s.groq_api_key:
         out.append(Provider("groq", "https://api.groq.com/openai/v1", s.groq_api_key, s.groq_model, s.groq_fast_model))
+        if s.groq_fast_model != s.groq_model:
+            out.append(
+                Provider(
+                    "groq-fast", "https://api.groq.com/openai/v1", s.groq_api_key, s.groq_fast_model, s.groq_fast_model
+                )
+            )
     if s.gemini_api_key:
         out.append(
             Provider(
@@ -100,7 +110,9 @@ def _post(p: Provider, body: dict[str, Any]) -> dict[str, Any]:
         headers={"Authorization": f"Bearer {p.api_key}"},
         timeout=45,
     )
-    if r.status_code == 429 or r.status_code >= 500:
+    if r.status_code == 429:
+        raise QuotaExceeded(r.text[:200])
+    if r.status_code >= 500:
         ra = r.headers.get("retry-after")
         raise RetryableHTTP(r.status_code, float(ra) if ra and ra.replace(".", "").isdigit() else None)
     r.raise_for_status()
@@ -131,13 +143,13 @@ def chat(
             body["tool_choice"] = "auto"
         if json_mode:
             body["response_format"] = {"type": "json_object"}
-        if p.name == "groq" and "gpt-oss" in model:
+        if p.name.startswith("groq") and "gpt-oss" in model:
             body["reasoning_effort"] = "low"
             body["max_tokens"] = max_tokens + 600
         try:
             data = _post(p, body)
         except Exception as e:
-            log.warning("provider %s failed: %r", p.name, e)
+            log.warning("provider %s (%s) failed: %r", p.name, model, e)
             errors.append(f"{p.name}: {e!r}")
             continue
         u = data.get("usage") or {}

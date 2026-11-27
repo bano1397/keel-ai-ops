@@ -36,8 +36,10 @@ ROUTE = {
     "human_request": "escalation",
     "legal_safety": "escalation",
 }
-MODEL = "openai/gpt-oss-120b"
-PRICE = (0.15, 0.60)
+MODEL = sys.argv[1] if len(sys.argv) > 1 else "openai/gpt-oss-120b"
+PRICES = {"openai/gpt-oss-120b": (0.15, 0.60), "qwen/qwen3.8-27b": (0.80, 4.00)}
+PRICE = PRICES[MODEL]
+EFFORT = "none" if MODEL.startswith("qwen") else "low"
 
 
 def parse(out: str) -> str:
@@ -63,7 +65,7 @@ def main() -> None:
                         "messages": r["messages"][:2],
                         "max_tokens": 300,
                         "temperature": 0,
-                        "reasoning_effort": "low",
+                        "reasoning_effort": EFFORT,
                     },
                     timeout=60,
                 )
@@ -108,7 +110,7 @@ def main() -> None:
         "tokens_in": tin,
         "tokens_out": tout,
     }
-    (HERE / "results_api.json").write_text(json.dumps(result, indent=2))
+    (HERE / f"results_api_{MODEL.split('/')[-1]}.json").write_text(json.dumps(result, indent=2))
     print(json.dumps(result, indent=2))
 
 
