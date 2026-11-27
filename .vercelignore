@@ -1,5 +1,4 @@
 .venv
-frontend
 finetune
 models
 deploy
