@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: keel
+Version: 1.0.0
+Requires-Python: >=3.12
+Requires-Dist: fastapi==0.115.6
+Requires-Dist: uvicorn[standard]==0.32.1
+Requires-Dist: pydantic==2.10.4
+Requires-Dist: pydantic-settings==2.7.0
+Requires-Dist: sqlalchemy==2.0.36
+Requires-Dist: psycopg[binary,pool]==3.2.3
+Requires-Dist: pgvector==0.3.6
+Requires-Dist: alembic==1.14.0
+Requires-Dist: httpx==0.28.1
+Requires-Dist: tenacity==9.0.0
+Requires-Dist: pyjwt==2.10.1
+Requires-Dist: bcrypt==4.2.1
+Requires-Dist: langgraph==0.2.60
+Requires-Dist: langgraph-checkpoint-postgres==2.0.9
+Requires-Dist: fastembed==0.4.2
+Requires-Dist: pypdf==5.1.0
+Requires-Dist: beautifulsoup4==4.12.3
+Requires-Dist: apscheduler==3.11.0
+Requires-Dist: sse-starlette==2.2.1
+Provides-Extra: router
+Requires-Dist: llama-cpp-python==0.3.5; extra == "router"
+Provides-Extra: dev
+Requires-Dist: pytest==8.3.4; extra == "dev"
+Requires-Dist: pytest-asyncio==0.25.0; extra == "dev"
+Requires-Dist: ruff==0.8.4; extra == "dev"
+Requires-Dist: mypy==1.14.0; extra == "dev"
+Requires-Dist: testcontainers[postgres]==4.9.0; extra == "dev"
